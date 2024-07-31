@@ -58,7 +58,7 @@
     .intro_message h2 {
         font-size: 0.6rem;
     }
-}
+}  
 
 @media screen and (max-width: 500px) {
     .intro_message h1 {
@@ -139,6 +139,10 @@
 @media screen and (min-width: 400px) {
     .main_navigation {
         font-size: 1.2rem;
+    }
+    .navigation_small {
+        display: none;
+        opacity: 0;
     }
     .main_navigation ul {
         gap: 0.4em;

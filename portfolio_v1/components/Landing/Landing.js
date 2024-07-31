@@ -36,8 +36,13 @@ function Landing() {
         // setup a monitor for the window inner width
         const handleResize = () => {
             setWidth(window.innerWidth);
-        }
+        }       
+
         window.addEventListener("resize", handleResize);
+        // check width when device initially loads and width === 0
+        if (width === 0) {
+            setWidth(window.innerWidth)
+        }
         if (width > 400) {
             setIsWithGreaterThan400(true);
         }
@@ -47,21 +52,6 @@ function Landing() {
         return () => window.removeEventListener("resize", handleResize);
     }, [width])
 
-    useEffect(() => {
-            const content = "Welcome to my portfolio. My name is Bruce Mahagwa and this is my work. Take your time and go through some of my projects. It will mean a lot. Thanks."
-            let idx = 0;
-            const paragraph_interval = setInterval(() => {
-                let letter = content[idx];
-                if (letter !== undefined) {
-                    console.log("letter", idx, letter)
-                    landing_page_content.current.textContent += letter;
-                    idx += 1
-                }
-                if (idx > content.length - 1) {
-                    clearInterval(paragraph_interval);
-                }      
-        }, 20)            
-    }, [])
 
     useGSAP(() => {
         // step 1
@@ -71,12 +61,11 @@ function Landing() {
             // bring about the large screen nav
             remove_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
         }
-        else {
+        else if (width <= 400 && width !== 0) {
             // bring about small screen nav
             enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
         }
     }, [isWidthGreaterThan400])
-
     return (
         <div className = {classes.landing} id = "landing" ref = {landing_page}>
             {/* intro message container */}
@@ -102,7 +91,7 @@ function Landing() {
                 <ul>
                     <li>
                         <Link href = "#projects" data-text = "Projects_main">Projects</Link>
-                    </li>
+                    </li>  
                     <li>
                         <Link href = "#contacts" data-text = "Contacts_main">Contacts</Link>
                     </li>
