@@ -2,6 +2,9 @@
 // import files e.g. css files
 import classes from "./Landing.module.css"
 import InfoCard from "./InfoCard";
+import SkillsCard from "./SkillsCard";
+import {info_card} from "../../temp_database/info_card_db"
+
 // import custom functions and animation effects
 import {removeIntroTextContainer, remove_small_screen_nav, enable_small_screen_nav } from "@/lib/gsap_landing";
 // import next, react, and other library functions
@@ -26,9 +29,15 @@ function Landing() {
     const large_screen_nav = useRef();
     const landing_page = useRef();
 
+    // info_card and skills_card variables
+    const {intro1, img} = info_card.about_me;
+    const {intro2, icons} = info_card.skills;
+    // console.log(intro1, img)
     // state
     // 1. Monitors window inner width.
     const [width, setWidth] = useState(0);
+    const [dummyWidth, setDummyWidth] = useState(0)
+    // dummyWidth remains at 0 even when the component is loaded at a certain width
     const [isWidthGreaterThan400, setIsWithGreaterThan400] = useState(false);
 
     useEffect(() => {
@@ -36,6 +45,7 @@ function Landing() {
         // setup a monitor for the window inner width
         const handleResize = () => {
             setWidth(window.innerWidth);
+            setDummyWidth(window.innerWidth);
         }       
 
         window.addEventListener("resize", handleResize);
@@ -58,12 +68,27 @@ function Landing() {
         removeIntroTextContainer(intro_message_container_ref.current);        
         // step 2
         if (width > 400) {
-            // bring about the large screen nav
-            remove_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+            if (width > 400 && dummyWidth > 0) {
+                // bring about the large screen nav during normal resize
+                remove_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+            }
+            else {
+                // this portion ensures that the navigation waits 3 seconds before firing
+                setTimeout(() => {
+                    remove_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+                }, 3000)
+            }
         }
-        else if (width <= 400 && width !== 0) {
-            // bring about small screen nav
-            enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+        else if (width <= 400) {
+            if (width <= 400 && dummyWidth !== 0) {
+                // bring about small screen nav during normal resize
+                enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+            }
+            else {
+                setTimeout(() => {
+                    enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
+                }, 2000)
+            }
         }
     }, [isWidthGreaterThan400])
 
@@ -124,12 +149,7 @@ function Landing() {
 
             {/* landing content */}
             <div className = {classes.landing_content}>
-                <InfoCard />
-                    <p>
-                        Please get to know more about me and my projects in this portfolio site.
-                        Feel free to contact me on any communication channel listed below. 
-                        I am eager and excited to hear from you. Enjoy.
-                    </p>
+                <InfoCard p = {intro1} img = {img} />
             </div>
             {/* end of landing content */}
 

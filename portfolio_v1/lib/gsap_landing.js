@@ -4,10 +4,10 @@ import {gsap} from "gsap";
 export function removeIntroTextContainer(intro_text_container) {
     // removes the first animation "Welcome to my Portfolio"
     gsap.to(intro_text_container, {
-        delay: 3,
+        delay: 2,
         duration: 1,
         opacity: 0,
-        zIndex: -9999
+        zIndex: -9999,
         // lower the z-index so that we can click on the nav links
     })
 }
@@ -74,3 +74,6 @@ export function enable_small_screen_nav(nav_left, nav_right, nav_small, nav_larg
 }
 
 
+export function show_paragraph_info_card() {
+
+}

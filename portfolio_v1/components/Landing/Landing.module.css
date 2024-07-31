@@ -23,6 +23,7 @@
 /* 1. Intro Message container */
 .intro_message_container {
     height: 100vh;
+    position: absolute;
     background: #000;
     /* background gets removed once the container is set to opacity 0 */
     display: grid;
@@ -198,6 +199,8 @@
     top: 0;
     display: flex;
     justify-content: space-between;
+    z-index: 1000;
+    display: none;
 }
 .navigation_small ul {
     display: flex;
@@ -227,5 +230,22 @@
 }
 
 /* landing content */
-
+.landing_content {
+    position: relative;
+    border: 3px solid red;
+    color: white;
+    height: 100vh;
+    top: 0;
+    padding-top: 2em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (min-width: 400px) {
+    .landing_content {
+        height: calc(100vh - 6em);
+        top: 6em;
+   }
+}
 /* end of landing content */
