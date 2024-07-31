@@ -1,6 +1,7 @@
 "use client";
 // import files e.g. css files
 import classes from "./Landing.module.css"
+import InfoCard from "./InfoCard";
 // import custom functions and animation effects
 import {removeIntroTextContainer, remove_small_screen_nav, enable_small_screen_nav } from "@/lib/gsap_landing";
 // import next, react, and other library functions
@@ -24,7 +25,6 @@ function Landing() {
     const small_screen_nav = useRef();
     const large_screen_nav = useRef();
     const landing_page = useRef();
-    const landing_page_content = useRef();
 
     // state
     // 1. Monitors window inner width.
@@ -66,6 +66,8 @@ function Landing() {
             enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
         }
     }, [isWidthGreaterThan400])
+
+
     return (
         <div className = {classes.landing} id = "landing" ref = {landing_page}>
             {/* intro message container */}
@@ -122,10 +124,12 @@ function Landing() {
 
             {/* landing content */}
             <div className = {classes.landing_content}>
-                <div className = {classes.landing_content_message}>
-                    <p ref = {landing_page_content}>
+                <InfoCard />
+                    <p>
+                        Please get to know more about me and my projects in this portfolio site.
+                        Feel free to contact me on any communication channel listed below. 
+                        I am eager and excited to hear from you. Enjoy.
                     </p>
-                </div>
             </div>
             {/* end of landing content */}
 

@@ -227,11 +227,5 @@
 }
 
 /* landing content */
-.landing_content {
-    position: absolute;
-    /* center the text */
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20%;
-    color: white;
-}
+
+/* end of landing content */
