@@ -1,0 +1,14 @@
+.skills_card {
+    border: 2px solid red;
+
+}
+.skills_icon {
+    width: 20px;
+    height: 20px;
+
+}
+.skills_card div {
+    border: 2px solid red;
+    padding: 3em 0;
+    border-radius: 50%;
+}

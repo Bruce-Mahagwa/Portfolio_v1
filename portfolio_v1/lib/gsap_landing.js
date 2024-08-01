@@ -1,5 +1,6 @@
 // import gsap animation lib
 import {gsap} from "gsap";
+import { TextPlugin } from "gsap/all";
 
 export function removeIntroTextContainer(intro_text_container) {
     // removes the first animation "Welcome to my Portfolio"
@@ -74,6 +75,24 @@ export function enable_small_screen_nav(nav_left, nav_right, nav_small, nav_larg
 }
 
 
-export function show_paragraph_info_card() {
+export function scramble_text(element, new_text) {
+    gsap.registerPlugin(TextPlugin)
+    gsap.to(element, {
+        duration: 3, 
+        text: {
+            value: new_text,
+            preserveSpaces: true,
+            newClass: "black",
+            rtl: true
+        }
+      });
+}
 
+export function rotate_skill_icon(icon) {
+    gsap.to(icon, {
+        duration: 2,
+        rotation: 360,
+        repeat: -1,
+        x: 100
+    })
 }
