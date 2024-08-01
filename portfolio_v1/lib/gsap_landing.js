@@ -93,6 +93,5 @@ export function rotate_skill_icon(icon) {
         duration: 2,
         rotation: 360,
         repeat: -1,
-        x: 100
     })
 }

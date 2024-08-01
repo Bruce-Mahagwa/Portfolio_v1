@@ -1,15 +1,12 @@
 .info_card {
-    /* position: absolute; */
-    position: relative;
+    position: absolute;
+    /* position: relative; */
     height: 100%;
     width: 60%;
     overflow: hidden;
 }
 .info_card p {
     color: white;
-}
-.black {
-    color: black;
 }
 .info_card_img {
     width: 100%;
