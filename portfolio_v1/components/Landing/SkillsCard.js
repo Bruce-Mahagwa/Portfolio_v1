@@ -17,7 +17,7 @@ const SkillsCard = ({p, skills}) => {
     useEffect(() => {
         scramble_text(paragraph_ref.current, p)
         rotate_skill_icon(icon_ref.current)
-    }, [])
+    }, []) 
    
     return (
         <div className = {`${classes.skills_card} ${classes2.info_card}`}>
