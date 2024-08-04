@@ -88,10 +88,11 @@ export function scramble_text(element, new_text) {
       });
 }
 
-export function rotate_skill_icon(icon) {
-    gsap.to(icon, {
-        duration: 2,
+export function rotate_skill_container(icon_container) {
+    gsap.to(icon_container, {
+        duration: 5,
         rotation: 360,
+        ease: "none",
         repeat: -1,
     })
 }

@@ -1,31 +1,41 @@
 // files
 import classes from "./SkillsCard.module.css";
 import classes2 from "./InfoCard.module.css";
-import { scramble_text, rotate_skill_icon } from "@/lib/gsap_landing";
+import { scramble_text, rotate_skill_container } from "@/lib/gsap_landing";
 import "./InfoCard.css"
 // components
 import Image from "next/image";
 // hooks
 import {useRef, useEffect} from "react";
+import { useGSAP } from "@gsap/react";
 
 const SkillsCard = ({p, skills}) => {
     const paragraph_ref = useRef();
-    const icon_ref = useRef();
+    const icon_container_ref = useRef();
 
     const reversed_intro = p.split("").reverse().join("");
+    const angle_increment = 360/skills.length;    
 
-    useEffect(() => {
+    useGSAP(() => {
         scramble_text(paragraph_ref.current, p)
-        rotate_skill_icon(icon_ref.current)
+        rotate_skill_container(icon_container_ref.current)
     }, []) 
    
     return (
         <div className = {`${classes.skills_card} ${classes2.info_card}`}>
             <p ref = {paragraph_ref}>{reversed_intro}</p>
-            <div>
-                {skills.map((skill) => {
-                    return (
-                        <Image src = {skill} alt = {skill} className = {classes.skills_icon} ref = {icon_ref} />
+            <div className = {classes.icon_container} ref = {icon_container_ref}> 
+                {skills.map((skill, index) => {
+                    const angleRad = (index*angle_increment*Math.PI)/180;
+                    const radius = "15vw";
+                    const x = `calc(${radius} * ${Math.cos(angleRad)})`
+                    const y = `calc(${radius} * ${Math.sin(angleRad)})`
+                    return ( 
+                        <div style = {{
+                            transform: `translate(${x}, ${y})`,
+                        }}>
+                            <Image src = {skill} alt = {skill} className = {classes.skills_icon} />
+                        </div>
                     )
                 })}
             </div>

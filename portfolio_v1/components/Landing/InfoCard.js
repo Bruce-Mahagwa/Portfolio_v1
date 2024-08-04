@@ -7,11 +7,12 @@ import { scramble_text } from "@/lib/gsap_landing";
 import Image from "next/image";
 // hooks
 import { useRef, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 
 const InfoCard = ({p, img}) => {
     const paragraph_ref = useRef();
     const reversed_intro = p.split("").reverse().join("");
-    useEffect(() => {
+    useGSAP(() => {
         scramble_text(paragraph_ref.current, p)
     }, [])
     
