@@ -18,7 +18,7 @@ const SkillsCard = ({p, skills}) => {
 
     useGSAP(() => {
         scramble_text(paragraph_ref.current, p)
-        rotate_skill_container(icon_container_ref.current)
+        // rotate_skill_container(icon_container_ref.current)
     }, []) 
    
     return (
@@ -33,7 +33,7 @@ const SkillsCard = ({p, skills}) => {
                     return ( 
                         <div style = {{
                             transform: `translate(${x}, ${y})`,
-                        }}>
+                        }} className = {classes.rotating_icon_container}>
                             <Image src = {skill} alt = {skill} className = {classes.skills_icon} />
                         </div>
                     )

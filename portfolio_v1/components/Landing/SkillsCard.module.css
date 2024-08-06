@@ -4,11 +4,22 @@
 .skills_icon {
     width: 100%;
     height: 100%;
+    animation: rotate_anticlockwise 20s infinite linear;
+    cursor: pointer;
+}
+.skills_icon:hover {
+    animation-play-state: paused;
+}
+@keyframes rotate_anticlockwise {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg)
+    }
 }
 .icon_container {
     border: 2px solid red;
-    /* padding: 3em 0;  */
-    /* border-radius: 50%; */
     width: 100%;
     height: 100%;
     position: relative;
@@ -16,8 +27,26 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    animation: rotate 20s infinite linear;
 }
-.icon_container div {
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.rotating_icon_container {
     position: absolute;
     width: 40px;
 }
+/* .rotating_icon_container:hover .icon_container {
+    animation-play-state: paused;
+} */
+.icon_container:has(.skills_icon:hover) {
+    animation-play-state: paused;
+    border: 2px solid green;
+}
+
