@@ -22,6 +22,7 @@
 
 /* 1. Intro Message container */
 .intro_message_container {
+    width: 100%;
     height: 100vh;
     position: absolute;
     background: #000;
@@ -241,6 +242,8 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    /* initially hide it */
+    opacity: 0;
 }
 @media screen and (min-width: 400px) {
     .landing_content {

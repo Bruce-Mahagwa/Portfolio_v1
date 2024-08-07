@@ -2,7 +2,7 @@
 import {gsap} from "gsap";
 import { TextPlugin } from "gsap/all";
 
-export function removeIntroTextContainer(intro_text_container) {
+export function removeIntroTextContainer(intro_text_container, landing_content) {
     // removes the first animation "Welcome to my Portfolio"
     gsap.to(intro_text_container, {
         delay: 2,
@@ -10,6 +10,12 @@ export function removeIntroTextContainer(intro_text_container) {
         opacity: 0,
         zIndex: -9999,
         // lower the z-index so that we can click on the nav links
+        onComplete: () => {
+            gsap.to(landing_content, {
+                duration: 2,
+                opacity: 1
+            })
+        }
     })
 }
 
@@ -78,7 +84,8 @@ export function enable_small_screen_nav(nav_left, nav_right, nav_small, nav_larg
 export function scramble_text(element, new_text) {
     gsap.registerPlugin(TextPlugin)
     gsap.to(element, {
-        duration: 3, 
+        duration: 3,
+        delay: 3, 
         text: {
             value: new_text,
             preserveSpaces: true,
@@ -86,13 +93,4 @@ export function scramble_text(element, new_text) {
             rtl: true
         }
       });
-}
-
-export function rotate_skill_container(icon_container) {
-    gsap.to(icon_container, {
-        duration: 5,
-        rotation: 360,
-        ease: "none",
-        repeat: -1,
-    })
 }

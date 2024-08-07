@@ -1,9 +1,8 @@
 .info_card {
-    /* position: absolute; */
     position: relative;
     height: 100%;  
     width: 60%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .info_card p {
     color: white;

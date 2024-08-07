@@ -6,7 +6,9 @@ import SkillsCard from "./SkillsCard";
 import {info_card} from "../../temp_database/info_card_db"
 
 // import custom functions and animation effects
-import {removeIntroTextContainer, remove_small_screen_nav, enable_small_screen_nav } from "@/lib/gsap_landing";
+import {removeIntroTextContainer, 
+    remove_small_screen_nav, 
+    enable_small_screen_nav} from "@/lib/gsap_landing";
 // import next, react, and other library functions
 import { useRef, useEffect, useState } from "react";
 import { useGSAP } from '@gsap/react';
@@ -28,6 +30,7 @@ function Landing() {
     const small_screen_nav = useRef();
     const large_screen_nav = useRef();
     const landing_page = useRef();
+    const landing_content = useRef();
 
     // info_card and skills_card variables
     const {intro1, img} = info_card.about_me;
@@ -64,10 +67,10 @@ function Landing() {
 
     useGSAP(() => {
         // step 1
-        removeIntroTextContainer(intro_message_container_ref.current);        
+        removeIntroTextContainer(intro_message_container_ref.current, landing_content.current);        
         // step 2
         if (width > 400) {
-            if (width > 400 && dummyWidth > 0) {
+            if (dummyWidth > 0) {
                 // bring about the large screen nav during normal resize
                 remove_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
             }
@@ -79,14 +82,14 @@ function Landing() {
             }
         }
         else if (width <= 400) {
-            if (width <= 400 && dummyWidth !== 0) {
+            if (dummyWidth !== 0) {
                 // bring about small screen nav during normal resize
                 enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
             }
             else {
                 setTimeout(() => {
                     enable_small_screen_nav(small_screen_nav_left.current, small_screen_nav_right.current, small_screen_nav.current, large_screen_nav.current);
-                }, 2000)
+                }, 3000)
             }
         }
     }, [isWidthGreaterThan400])
@@ -95,13 +98,13 @@ function Landing() {
     return (
         <div className = {classes.landing} id = "landing" ref = {landing_page}>
             {/* intro message container */}
-            {/* <div ref = {intro_message_container_ref} className = {classes.intro_message_container}>
+            <div ref = {intro_message_container_ref} className = {classes.intro_message_container}>
                 <div className = {classes.intro_message}>
                     <h1>WELCOME&nbsp;&nbsp;</h1>
                     <h2>TO MY&nbsp;&nbsp;</h2>
                     <h1>PORTFOLIO</h1>
                 </div>
-            </div> */}
+            </div>
             {/* end of intro message container */}
 
             {/* navigation */}
@@ -147,7 +150,7 @@ function Landing() {
             {/* end of navigation */}
 
             {/* landing content */}
-            <div className = {classes.landing_content}>
+            <div className = {classes.landing_content} ref={landing_content}> 
                 {/* <InfoCard p = {intro1} img = {img} /> */}
                 <SkillsCard p = {intro2} skills = {icons} 
                 labels = {labels} />
