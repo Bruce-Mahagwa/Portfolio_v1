@@ -9,7 +9,7 @@ import Image from "next/image";
 import {useRef, useEffect} from "react";
 import { useGSAP } from "@gsap/react";
 
-const SkillsCard = ({p, skills}) => {
+const SkillsCard = ({p, skills, labels}) => {
     const paragraph_ref = useRef();
     const icon_container_ref = useRef();
 
@@ -31,13 +31,23 @@ const SkillsCard = ({p, skills}) => {
                     const x = `calc(${radius} * ${Math.cos(angleRad)})`
                     const y = `calc(${radius} * ${Math.sin(angleRad)})`
                     return ( 
+                        <>
                         <div style = {{
                             transform: `translate(${x}, ${y})`,
-                        }} className = {classes.rotating_icon_container}>
-                            <Image src = {skill} alt = {skill} className = {classes.skills_icon} />
-                        </div>
+                        }} className = {classes.rotating_icon_container}
+                        data-skill = {labels[index]}>
+                            <Image src = {skill} alt = {skill} className = {classes.skills_icon} />                            
+                        </div>                        
+                        </>
                     )
                 })}
+                
+                {/* <div className={classes.label}>
+                    <h2>label</h2>
+                </div> */}
+            </div>
+            <div className={classes.label}>
+                    <h2>label</h2>
             </div>
         </div>
     )

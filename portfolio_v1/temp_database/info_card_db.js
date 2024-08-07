@@ -23,6 +23,8 @@ export const info_card = {
     skills: {
         intro2: "Here are my tools of trade",
         icons: [next, react, node, mongodb, mongoose, sass,
-        excel, python, redux, express, github, jupyter, html, css]
+        excel, python, redux, express, github, jupyter, html, css],
+        labels: ["NextJS", "ReactJS", "NodeJS", "MongoDB", "Mongoose", "SASS",
+    "Excel", "Python", "Redux", "ExpressJS", "Github", "JupyterNotebook", "HTML", "CSS"]
     }
 }

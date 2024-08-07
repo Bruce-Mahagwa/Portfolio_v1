@@ -31,7 +31,7 @@ function Landing() {
 
     // info_card and skills_card variables
     const {intro1, img} = info_card.about_me;
-    const {intro2, icons} = info_card.skills;
+    const {intro2, icons, labels} = info_card.skills;
     // state
     // 1. Monitors window inner width.
     const [width, setWidth] = useState(0);
@@ -149,7 +149,8 @@ function Landing() {
             {/* landing content */}
             <div className = {classes.landing_content}>
                 {/* <InfoCard p = {intro1} img = {img} /> */}
-                <SkillsCard p = {intro2} skills = {icons} />
+                <SkillsCard p = {intro2} skills = {icons} 
+                labels = {labels} />
             </div>
             {/* end of landing content */}
 

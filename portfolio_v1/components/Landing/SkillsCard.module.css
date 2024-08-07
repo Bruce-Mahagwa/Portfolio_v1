@@ -1,25 +1,7 @@
 .skills_card {
-    border: 2px solid red;
-}
-.skills_icon {
-    width: 100%;
-    height: 100%;
-    animation: rotate_anticlockwise 20s infinite linear;
-    cursor: pointer;
-}
-.skills_icon:hover {
-    animation-play-state: paused;
-}
-@keyframes rotate_anticlockwise {
-    0% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transform: rotate(0deg)
-    }
+    border: 2px solid green;
 }
 .icon_container {
-    border: 2px solid red;
     width: 100%;
     height: 100%;
     position: relative;
@@ -37,16 +19,59 @@
         transform: rotate(360deg)
     }
 }
-
+.icon_container:hover .skills_icon {
+    animation-play-state: paused;
+    display: block;
+}
+.icon_container:has(.skills_icon:hover) {
+    animation-play-state: paused;
+}
+.skills_card:has(.skills_icon:hover) .label {
+    display: block;
+}
 .rotating_icon_container {
     position: absolute;
     width: 40px;
+    border: 2px solid red;
 }
-/* .rotating_icon_container:hover .icon_container {
-    animation-play-state: paused;
-} */
-.icon_container:has(.skills_icon:hover) {
-    animation-play-state: paused;
-    border: 2px solid green;
+
+@media screen and (min-width: 1000px) {
+    .rotating_icon_container {
+        width: 60px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .rotating_icon_container {
+        width: 70px;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .rotating_icon_container {
+        width: 90px;
+    }
+}
+
+.skills_icon {
+    width: 100%;
+    height: 100%; 
+    animation: rotate_anticlockwise 20s infinite linear;
+    cursor: pointer;
+}
+
+@keyframes rotate_anticlockwise {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.label {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
