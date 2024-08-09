@@ -8,7 +8,7 @@ export const metadata = {
   description: "Hosts the Portfolio of Bruce Mahagwa, software engineer and data analyst",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children}) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
