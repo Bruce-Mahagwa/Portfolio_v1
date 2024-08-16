@@ -40,7 +40,7 @@ const SkillsCard = ({p, skills, labels}) => {
             <div className = {classes.icon_container} ref = {icon_container_ref}> 
                 {skills.map((skill, index) => {
                     const angleRad = (index*angle_increment*Math.PI)/180;
-                    const radius = "16vw";
+                    const radius = "35vw";
                     const x = `calc(${radius} * ${Math.cos(angleRad)})`
                     const y = `calc(${radius} * ${Math.sin(angleRad)})`
                     return ( 

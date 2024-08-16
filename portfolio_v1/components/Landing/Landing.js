@@ -152,8 +152,7 @@ function Landing() {
             {/* landing content */}
             <div className = {classes.landing_content} ref={landing_content}> 
                 {/* <InfoCard p = {intro1} img = {img} /> */}
-                <SkillsCard p = {intro2} skills = {icons} 
-                labels = {labels} />
+                <SkillsCard p = {intro2} skills = {icons} labels = {labels} />
             </div>
             {/* end of landing content */}
 
