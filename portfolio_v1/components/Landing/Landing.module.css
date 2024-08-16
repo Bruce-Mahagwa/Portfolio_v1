@@ -5,7 +5,8 @@
 /* start of highest level landing container */
 .landing {
     height: 100vh;
-    background: url("../../assets/images/main-bg.jpg");
+    /* background: url("../../assets/images/main-bg.jpg"); */
+    background: url("../../assets/images/main_bg1_reduced_smaller.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
@@ -14,7 +15,7 @@
 @media screen and (max-width: 400px) {
     /* different backgrounds */
     .landing {
-        background: url("../../assets/images/small.jpg");
+        /* background: url("../../assets/images/small.jpg"); */
     }
 }
 

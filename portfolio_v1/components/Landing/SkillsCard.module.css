@@ -13,6 +13,7 @@
     align-items: center;
     overflow: hidden;
     animation: rotate 20s infinite linear;
+    border: 2px solid red;
 }
 @keyframes rotate {
     0% {
@@ -22,9 +23,8 @@
         transform: rotate(360deg)
     }
 }
-.icon_container:hover .skills_icon {
+.icon_container:has(.skills_icon:hover) * {
     animation-play-state: paused;
-    display: block;
 }
 .icon_container:has(.skills_icon:hover) {
     animation-play-state: paused;
@@ -32,6 +32,7 @@
 .skills_card:has(.skills_icon:hover) .label {
     display: block;
 }
+
 .rotating_icon_container {
     position: absolute;
     width: 40px;

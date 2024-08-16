@@ -16,7 +16,7 @@
 }
 @media screen and (min-width: 400px) {
     .info_card {
-        width: 80%;
+        /* width: 80%; */
         text-align: center;
     }
     .info_card_img {

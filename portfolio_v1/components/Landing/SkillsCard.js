@@ -1,4 +1,4 @@
-// files
+// files and functions
 import classes from "./SkillsCard.module.css";
 import classes2 from "./InfoCard.module.css";
 import { scramble_text} from "@/lib/gsap_landing";
@@ -23,6 +23,7 @@ const SkillsCard = ({p, skills, labels}) => {
     useGSAP(() => {
         scramble_text(paragraph_ref.current, p)
     }, []) 
+
     function onMouseHover(e) {
         // adds a hover event to the skills icons
         if (e.currentTarget) {
@@ -40,7 +41,7 @@ const SkillsCard = ({p, skills, labels}) => {
             <div className = {classes.icon_container} ref = {icon_container_ref}> 
                 {skills.map((skill, index) => {
                     const angleRad = (index*angle_increment*Math.PI)/180;
-                    const radius = "35vw";
+                    const radius = "15vw";
                     const x = `calc(${radius} * ${Math.cos(angleRad)})`
                     const y = `calc(${radius} * ${Math.sin(angleRad)})`
                     return ( 
