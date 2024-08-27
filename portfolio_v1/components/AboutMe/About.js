@@ -1,6 +1,7 @@
 // files
 import classes from "./AboutMe.module.css"
 import WorkExperience from "./WorkExperience";
+import Education from "./Education";
 // dependencies
 
 // variables
@@ -37,6 +38,21 @@ const job_tasks = [
     }
 ]
 
+const education = [
+    {
+        id: "UON",
+        experience: "Bachelor's in Economics"
+    },
+    {
+        id: "Udacity",
+        experience: "Data Analysis"
+    },
+    {
+        id: "Holberton School",
+        experience: "Software Engineering"
+    }
+]
+
 const About = () => {
     return (
         <section className={classes.about}>
@@ -45,12 +61,14 @@ const About = () => {
             <div className = {classes.about_container}>
                 {/* work experience */}
                 <div className = {classes.work_experience}>
-                    <WorkExperience place = {"Yashio Kenya"} date = {{start: "4/2024", end: "6/2024"}} location={"Remote"}  tasks = {job_tasks[0]}/>
-                    <WorkExperience place = {"Outreachy"} date = {{start: "3/2024", end: "4/2024"}} location={"Remote"}  tasks = {job_tasks[1]}/>
+                    <WorkExperience place = {"Yashio Kenya"} date = {{start: "4/2024", end: "6/2024"}} location={"Remote"}  tasks = {job_tasks[0].tasks}/>
+                    <WorkExperience place = {"Outreachy"} date = {{start: "3/2024", end: "4/2024"}} location={"Remote"}  tasks = {job_tasks[1].tasks}/>
                 </div>
                 {/* education */}
                 <div className = {classes.education}>
-
+                    <Education place = {"University of Nairobi"} date = {{start: "2/2018", end: "12/2022"}} experience = {education[0].experience} />
+                    <Education place = {"Udacity"} date = {{start: "6/2022", end: "10/2022"}} experience = {education[1].experience} />
+                    <Education place = {"Holberton School"} date = {{start: "7/2022", end: "11/2023"}} experience = {education[2].experience} />
                 </div>
                 {/* social links and stats */}
                 <div className={classes.social_stats}>
