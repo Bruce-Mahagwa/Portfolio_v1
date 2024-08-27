@@ -61,11 +61,13 @@ const About = () => {
             <div className = {classes.about_container}>
                 {/* work experience */}
                 <div className = {classes.work_experience}>
+                    <h2>Work Experience</h2>
                     <WorkExperience place = {"Yashio Kenya"} date = {{start: "4/2024", end: "6/2024"}} location={"Remote"}  tasks = {job_tasks[0].tasks}/>
                     <WorkExperience place = {"Outreachy"} date = {{start: "3/2024", end: "4/2024"}} location={"Remote"}  tasks = {job_tasks[1].tasks}/>
                 </div>
                 {/* education */}
                 <div className = {classes.education}>
+                    <h2>Education</h2>
                     <Education place = {"University of Nairobi"} date = {{start: "2/2018", end: "12/2022"}} experience = {education[0].experience} />
                     <Education place = {"Udacity"} date = {{start: "6/2022", end: "10/2022"}} experience = {education[1].experience} />
                     <Education place = {"Holberton School"} date = {{start: "7/2022", end: "11/2023"}} experience = {education[2].experience} />

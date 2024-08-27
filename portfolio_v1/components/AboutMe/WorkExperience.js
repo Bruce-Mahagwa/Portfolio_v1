@@ -2,7 +2,7 @@
 import classes from "./WorkExperience.module.css";
 const WorkExperience = ({place, date, location, tasks}) => {
     return (
-        <div>
+        <div className={classes.experience}>
             <div>
                 <h2>{place}, {location}</h2>
                 <p>{date.start}/{date.end}</p>

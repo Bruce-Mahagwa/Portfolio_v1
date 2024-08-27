@@ -1,0 +1,11 @@
+.experience {
+    padding: 1em;
+}
+.experience div:first-child {
+    display: flex;
+    gap: 3em;
+    align-items: baseline;
+}
+.experience div:last-child p:not(:last-child) {
+    margin-bottom: 1em;
+}

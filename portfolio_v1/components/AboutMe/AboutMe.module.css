@@ -1,6 +1,37 @@
 .about {
     height: 100vh;
+    width: 100%;
     background: #000;
     color: #fff;
-    
+    padding-top: 1em;
+    overflow: hidden;
+    background: url("../../assets/images/about_me2.jpg");
+}
+.about_container {
+    width: 100%;
+    padding: 1em 1em 1em 3em;
+}
+.about h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+.about h2 {
+    margin-bottom: 1em;
+}
+.work_experience, .education {
+    border-left: 2px solid white;
+    position: relative;
+}
+.work_experience::before {
+    position: absolute;
+    /* content: url("../../assets/images/Pic-small.jpg"); */
+    width: 200px;
+    height: 20px;
+    /* background: green; */
+}
+.education::before {
+    content: "";
+    width: 200px;
+    height: 20px;
+    background: green;
 }
