@@ -1,9 +1,9 @@
+"use client"
 // files
 import classes from "./AboutMe.module.css"
-import WorkExperience from "./WorkExperience";
-import Education from "./Education";
 // dependencies
-
+import { Timeline } from "flowbite-react";
+import { IoCalendarOutline } from "react-icons/io5";
 // variables
 
 const job_tasks = [
@@ -55,29 +55,83 @@ const education = [
 
 const About = () => {
     return (
-        <section className={classes.about}>
-            {/* title */}
-            <h1>Web Dev and Data Analyst</h1>
-            <div className = {classes.about_container}>
-                {/* work experience */}
-                <div className = {classes.work_experience}>
-                    <h2>Work Experience</h2>
-                    <WorkExperience place = {"Yashio Kenya"} date = {{start: "4/2024", end: "6/2024"}} location={"Remote"}  tasks = {job_tasks[0].tasks}/>
-                    <WorkExperience place = {"Outreachy"} date = {{start: "3/2024", end: "4/2024"}} location={"Remote"}  tasks = {job_tasks[1].tasks}/>
-                </div>
-                {/* education */}
-                <div className = {classes.education}>
-                    <h2>Education</h2>
-                    <Education place = {"University of Nairobi"} date = {{start: "2/2018", end: "12/2022"}} experience = {education[0].experience} />
-                    <Education place = {"Udacity"} date = {{start: "6/2022", end: "10/2022"}} experience = {education[1].experience} />
-                    <Education place = {"Holberton School"} date = {{start: "7/2022", end: "11/2023"}} experience = {education[2].experience} />
-                </div>
-                {/* social links and stats */}
-                <div className={classes.social_stats}>
+        <section className = {classes.about}>
+             <h1>Web Dev and Data Analyst</h1>
+             <div>
+                 <h2>Experience</h2>
+             </div>
+            <Timeline>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2" >
+                        <Timeline.Time>April 2024 - June 2024</Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Yashio Kenya</Timeline.Title>
+                        <Timeline.Body>
+                            {Object.keys(job_tasks[0].tasks).map((key) => {
+                                const task = job_tasks[0].tasks[key]
+                                return (
+                                    <p key = {task}>{task}</p>
+                                )
+                            })}
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
 
-                </div>
-            </div>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2">
+                        <Timeline.Time>March 2024 - April 2024 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Outreachy</Timeline.Title>
+                        <Timeline.Body>
+                        {Object.keys(job_tasks[1].tasks).map((key) => {
+                                const task = job_tasks[0].tasks[key]
+                                return (
+                                    <p key = {task}>{task}</p>
+                                )
+                            })}
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+            </Timeline>
+
+             <div>
+                 <h2>Education</h2>
+             </div>
+            <Timeline horizontal className="flex justify-center">
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Holberton School</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Software Engineering</h3>
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Udacity</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Data Analysis</h3>
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">University of Nairobi</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Bachelor's in Economics</h3>
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+            </Timeline>
         </section>
     )
 }
 export default About;
+
+
