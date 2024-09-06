@@ -80,7 +80,7 @@ const Projects = () => {
                     </div>}
                     {/* carousel for web dev projects */}
                     {width <= 400 && (
-                        <ProjectsCarousel />
+                        <ProjectsCarousel data = {project_data_web}/>
                     )}
                     {/* end of carouself for web dev projects */}
                 </div>
@@ -111,7 +111,7 @@ const Projects = () => {
                     </div>}
                     {/* carousel for data analystics projects */}
                     {width <= 400 && (
-                        <ProjectsCarousel />
+                        <ProjectsCarousel data = {project_data_data_analysis} />
                     )}
                     {/* end of carousel for data analytic projects */}
                 </div>
