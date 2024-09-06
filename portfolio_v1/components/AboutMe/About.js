@@ -66,9 +66,9 @@ const About = () => {
             <Timeline>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2" >
+                    <Timeline.Content className = "px-1" >
                         <Timeline.Time>April 2024 - June 2024</Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Yashio Kenya</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Yashio Kenya</Timeline.Title>
                         <Timeline.Body>
                             {Object.keys(job_tasks[0].tasks).map((key) => {
                                 const task = job_tasks[0].tasks[key]
@@ -82,9 +82,9 @@ const About = () => {
 
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2">
+                    <Timeline.Content className = "px-1">
                         <Timeline.Time>March 2024 - April 2024 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Outreachy</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Outreachy</Timeline.Title>
                         <Timeline.Body>
                         {Object.keys(job_tasks[1].tasks).map((key) => {
                                 const task = job_tasks[0].tasks[key]
@@ -103,31 +103,31 @@ const About = () => {
             {width > 620 && <Timeline horizontal className="flex justify-center">
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "pr-8 py-4">
                         <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Holberton School</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Holberton School</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Software Engineering</h3>
+                            <h3 className="text-left text-xl">Software Engineering</h3>
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "pr-8 py-4">
                         <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Udacity</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Udacity</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Data Analysis</h3>
+                            <h3 className="text-left text-lg">Data Analysis</h3>
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "px-1 py-4">
                         <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">University of Nairobi</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Bachelor's in Economics</h3>
+                            <h3 className="text-left text-lg">Bachelor's in Economics</h3>
                         </Timeline.Body>                     
                     </Timeline.Content>
                 </Timeline.Item>
@@ -136,31 +136,31 @@ const About = () => {
         {width <= 620 && <Timeline>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "px-1 pb-4">
                         <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Holberton School</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Holberton School</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Software Engineering</h3>
+                            <h3 className="text-left text-xl">Software Engineering</h3>
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "px-1 pb-4">
                         <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">Udacity</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">Udacity</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Data Analysis</h3>
+                            <h3 className="text-left text-xl">Data Analysis</h3>
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-2 py-5">
+                    <Timeline.Content className = "px-1 pb-4">
                         <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50">University of Nairobi</Timeline.Title>
+                        <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
                         <Timeline.Body>
-                            <h3>Bachelor's in Economics</h3>
+                            <h3 className="text-left text-xl">Bachelor's in Economics</h3>
                         </Timeline.Body>                     
                     </Timeline.Content>
                 </Timeline.Item>

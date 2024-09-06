@@ -7,7 +7,7 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // dependencies
 import { Card } from "flowbite-react";
 import Image from "next/image";
-
+import { useState } from "react";
 
 const project_data_web = [
     {
@@ -48,6 +48,8 @@ const project_data_data_analysis = [
 ]
 const Projects = () => {
     const width = useDeviceWidth();
+    
+    console.log(width)
     return (  
         <section className={classes.projects}>
             <h1>Projects</h1>
@@ -55,7 +57,7 @@ const Projects = () => {
                 {/* web dev */}
                 <div className={classes.web_dev}>
                     <h2>Web Development</h2>
-                        {width > 500 && <div>
+                        {width > 500 && <div className = {classes.flex_container}>
                             <Card className = {classes.card}
                                 renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
@@ -65,20 +67,20 @@ const Projects = () => {
                             <p className="font-normal text-gray-700 dark:text-gray-400">
                                 Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
                             </p>
-                        </Card>
-                        <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
-                                >
-                                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021
-                                </h5>
-                            <p className="font-normal text-gray-700 dark:text-gray-400">
-                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                            </p>
-                        </Card>
+                            </Card>
+                            <Card className = {classes.card}
+                                    renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
+                                    >
+                                    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        Noteworthy technology acquisitions 2021
+                                    </h5>
+                                <p className="font-normal text-gray-700 dark:text-gray-400">
+                                    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                                </p>
+                            </Card>
                     </div>}
                     {/* carousel for web dev projects */}
-                    {width <= 400 && (
+                    {width <= 500 && (
                         <ProjectsCarousel data = {project_data_web}/>
                     )}
                     {/* end of carouself for web dev projects */}
@@ -86,7 +88,7 @@ const Projects = () => {
                 {/* data analysis */}
                 <div className={classes.data_analytics}>
                     <h2>Data Analytics</h2>                    
-                    {width > 500 && <div>
+                    {width > 500 && <div className = {classes.flex_container}>
                         <Card className = {classes.card}
                                 renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
@@ -109,7 +111,7 @@ const Projects = () => {
                         </Card>
                     </div>}
                     {/* carousel for data analystics projects */}
-                    {width <= 400 && (
+                    {width <= 500 && (
                         <ProjectsCarousel data = {project_data_data_analysis} />
                     )}
                     {/* end of carousel for data analytic projects */}
