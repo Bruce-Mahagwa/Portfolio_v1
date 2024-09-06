@@ -1,6 +1,7 @@
+"use client"
 // files
 import classes from "./Projects.module.css"
-import img from "./images/main_bg1_reduced.jpg"
+import img_project from "./images/main_bg1_reduced.jpg"
 import ProjectsCarousel from "./ProjectsCarousel";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // dependencies
@@ -11,14 +12,15 @@ import Image from "next/image";
 const project_data_web = [
     {
         name: "React Visualization Library",
-        img: img,
+        img_project: img_project,
         description: "A data visualization interface made with React and D3js",
         github: "",
-        live: ""
+        live: "",
+        extras: []
     },
     {
         name: "ThingsWeLike",
-        img: img,
+        img_project: img_project,
         description: "A social media site made with MERN stack and Redux Toolkit",
         github: "",
         live: ""
@@ -27,23 +29,20 @@ const project_data_web = [
 const project_data_data_analysis = [
     {
         name: "An analysis on the Quality Scores of Wikimedia Articles",
-        img: img,
+        img_project: img_project,
         description: "An investigation into the quality scores and feature values of Wikimedia articles - Jupyter Notebook and Python",
-        github: "",
-        live: ""
+        live: "https://public-paws.wmcloud.org/User:BruceMahagwa/Microtask.ipynb"
     },
     {
         name: "An exploration into Prosper Bank load data",
-        img: img,
-        description: "An investigation into loans provided by Prosper Bank - Jupyter Notebook",
-        github: "",
+        img_project: img_project,
+        description: "An investigation into loans provided by Prosper Bank - Jupyter Notebook",        
         live: ""
     },
     {
         name: "An exploration into twitter archive data",
-        img: img,
+        img_project: img_project,
         description: "An investigation into twitter archive data | Gathering and cleaning data - Jupyter Notebook",
-        github: "",
         live: ""
     }
 ]
@@ -58,7 +57,7 @@ const Projects = () => {
                     <h2>Web Development</h2>
                         {width > 500 && <div>
                             <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img} alt="image 1" className = {classes.portfolio_img}/>}
+                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
                                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021
@@ -68,7 +67,7 @@ const Projects = () => {
                             </p>
                         </Card>
                         <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img} alt="image 1" className = {classes.portfolio_img}/>}
+                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
                                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021
@@ -89,7 +88,7 @@ const Projects = () => {
                     <h2>Data Analytics</h2>                    
                     {width > 500 && <div>
                         <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img} alt="image 1" className = {classes.portfolio_img}/>}
+                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
                                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021
@@ -99,7 +98,7 @@ const Projects = () => {
                             </p>
                         </Card>
                         <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img} alt="image 1" className = {classes.portfolio_img}/>}
+                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                                 >
                                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     Noteworthy technology acquisitions 2021

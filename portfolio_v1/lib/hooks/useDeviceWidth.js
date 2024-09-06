@@ -1,3 +1,4 @@
+"use client"
 // dependencies
 import { useEffect, useState } from "react"
 
