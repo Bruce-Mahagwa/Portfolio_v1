@@ -1,9 +1,11 @@
 "use client"
 // files
 import classes from "./AboutMe.module.css"
+import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // dependencies
 import { Timeline } from "flowbite-react";
 import { IoCalendarOutline } from "react-icons/io5";
+import { useEffect, useState } from "react";
 // variables
 
 const job_tasks = [
@@ -54,6 +56,7 @@ const education = [
 ]
 
 const About = () => {
+    const width = useDeviceWidth();
     return (
         <section className = {classes.about}>
              <h1>Web Dev and Data Analyst</h1>
@@ -97,7 +100,7 @@ const About = () => {
              <div>
                  <h2>Education</h2>
              </div>
-            <Timeline horizontal className="flex justify-center">
+            {width > 620 && <Timeline horizontal className="flex justify-center">
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
                     <Timeline.Content className = "px-2 py-5">
@@ -125,10 +128,43 @@ const About = () => {
                         <Timeline.Title className = "text-white opacity-50">University of Nairobi</Timeline.Title>
                         <Timeline.Body>
                             <h3>Bachelor's in Economics</h3>
-                        </Timeline.Body>                    
+                        </Timeline.Body>                     
                     </Timeline.Content>
                 </Timeline.Item>
             </Timeline>
+        }
+        {width <= 620 && <Timeline>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Holberton School</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Software Engineering</h3>
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">Udacity</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Data Analysis</h3>
+                        </Timeline.Body>                    
+                    </Timeline.Content>
+                </Timeline.Item>
+                <Timeline.Item>
+                    <Timeline.Point icon={IoCalendarOutline} />
+                    <Timeline.Content className = "px-2 py-5">
+                        <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
+                        <Timeline.Title className = "text-white opacity-50">University of Nairobi</Timeline.Title>
+                        <Timeline.Body>
+                            <h3>Bachelor's in Economics</h3>
+                        </Timeline.Body>                     
+                    </Timeline.Content>
+                </Timeline.Item>
+            </Timeline>}
         </section>
     )
 }

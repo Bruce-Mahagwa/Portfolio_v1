@@ -1,4 +1,9 @@
+.contacts_container {
+    background: #000;
+    color: #fff;
+    padding: 2em 1em 1em 2em;
+}
 .contacts {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
 }
