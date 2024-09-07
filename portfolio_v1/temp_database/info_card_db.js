@@ -21,7 +21,7 @@ export const info_card = {
         img: pic_me,
     },
     skills: {
-        intro2: "Here are my tools of trade",
+        intro2: "Bruce Mahagwa - Full Stack Dev and Data Analyst",
         icons: [next, react, node, mongodb, mongoose, sass,
         excel, python, redux, express, github, jupyter, html, css],
         labels: ["NextJS", "ReactJS", "NodeJS", "MongoDB", "Mongoose", "SASS",

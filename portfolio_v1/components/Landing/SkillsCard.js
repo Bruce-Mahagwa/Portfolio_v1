@@ -3,17 +3,19 @@ import classes from "./SkillsCard.module.css";
 import classes2 from "./InfoCard.module.css";
 import { scramble_text} from "@/lib/gsap_landing";
 import "./InfoCard.css"
+import "./SkillsCard.css"
 // components
 import Image from "next/image";
 // hooks
-import {useRef, useEffect, useState} from "react";
+import {useRef, useState} from "react";
 import { useGSAP } from "@gsap/react";
+import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 
 const SkillsCard = ({p, skills, labels}) => {
     const paragraph_ref = useRef();
     const icon_container_ref = useRef();
     const icon_ref = useRef();
-
+    const width = useDeviceWidth()
     const [label, setLabel] = useState(null);
 
     const reversed_intro = p.split("").reverse().join("");
@@ -34,14 +36,25 @@ const SkillsCard = ({p, skills, labels}) => {
             return;
         }
     }
-
+    let radius = "30vw";
+    if (width > 650) {
+        radius = "22vw"
+    }
+    else if (width > 900) {
+        radius = "16vw"
+    }
+    else if (width > 1024) {
+        radius = "10vw"
+    }
+    else if (width > 1500) {
+        radius = "5vw"
+    }
     return (
         <div className = {`${classes.skills_card} ${classes2.info_card}`}>
             <p ref = {paragraph_ref}>{reversed_intro}</p>
-            <div className = {classes.icon_container} ref = {icon_container_ref}> 
+            <div className = {`${classes.icon_container} ${classes.hide}`} ref = {icon_container_ref}> 
                 {skills.map((skill, index) => {
                     const angleRad = (index*angle_increment*Math.PI)/180;
-                    const radius = "15vw";
                     const x = `calc(${radius} * ${Math.cos(angleRad)})`
                     const y = `calc(${radius} * ${Math.sin(angleRad)})`
                     return ( 
@@ -56,6 +69,36 @@ const SkillsCard = ({p, skills, labels}) => {
                     )
                 })}                
             </div>
+
+            {/* small screens */}
+            <div className = {classes.icon_container} ref = {icon_container_ref} id = "icon_container_small_screen"> 
+                <div>
+                    {skills.slice(0, Math.floor(skills.length / 2)).map((skill, index) => {
+                        return ( 
+                            <>
+                                <div className = {classes.rotating_icon_container}>
+                                    <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index]} 
+                                    onMouseOver={onMouseHover}/>                            
+                                </div>                        
+                            </>
+                        )
+                    })}
+                </div>
+                <div>
+                    {skills.slice(Math.floor(skills.length / 2), skills.length).map((skill, index) => {
+                        return ( 
+                            <>
+                                <div className = {classes.rotating_icon_container}>
+                                    <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index + Math.floor(skills.length / 2)]} 
+                                    onMouseOver={onMouseHover}/>                            
+                                </div>                        
+                            </>
+                        )
+                    })}
+                </div>                                
+            </div>
+            {/* end of small screens */}
+
             <div className={classes.label}>
                     <h2>{label}</h2>
             </div>

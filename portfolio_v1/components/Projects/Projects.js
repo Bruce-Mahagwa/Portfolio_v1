@@ -48,8 +48,6 @@ const project_data_data_analysis = [
 ]
 const Projects = () => {
     const width = useDeviceWidth();
-    
-    console.log(width)
     return (  
         <section className={classes.projects}>
             <h1>Projects</h1>

@@ -1,7 +1,6 @@
 "use client";
 // import files e.g. css files
 import classes from "./Landing.module.css"
-import InfoCard from "./InfoCard";
 import SkillsCard from "./SkillsCard";
 import {info_card} from "../../temp_database/info_card_db"
 
@@ -33,7 +32,6 @@ function Landing() {
     const landing_content = useRef();
 
     // info_card and skills_card variables
-    const {intro1, img} = info_card.about_me;
     const {intro2, icons, labels} = info_card.skills;
     // state
     // 1. Monitors window inner width.
@@ -151,7 +149,6 @@ function Landing() {
 
             {/* landing content */}
             <div className = {classes.landing_content} ref={landing_content}> 
-                {/* <InfoCard p = {intro1} img = {img} /> */}
                 <SkillsCard p = {intro2} skills = {icons} labels = {labels} />
             </div>
             {/* end of landing content */}

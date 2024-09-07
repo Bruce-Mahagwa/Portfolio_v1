@@ -1,11 +1,12 @@
 .info_card {
     position: relative;
     height: 100%;  
-    width: 60%;
+    width: 100%;
     overflow: hidden;
 }
 .info_card p {
-    color: white;
+    color: black;
+    text-align: center;
 }
 .info_card_img {
     width: 100%;
@@ -25,32 +26,19 @@
     }
 }
 @media screen and (min-width: 600px) {
-    .info_card {
-        width: 70%;
-    }
+    
     .info_card_img {
         width: 70%;
     }
 }
 @media screen and (min-width: 800px) {
-    .info_card {
-        width: 60%;
-    }
+    
     .info_card_img {
         width: 60%;
     }
 }
-@media screen and (min-width: 1000px) {
-    .info_card {
-        width: 50%;
-    }
+@media screen and (min-width: 1000px) {    
     .info_card_img {
         width: 60%;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .info_card {
-        padding-top: 3em;
-        width: 40%;
     }
 }

@@ -5,18 +5,11 @@
 /* start of highest level landing container */
 .landing {
     height: 100vh;
-    /* background: url("../../assets/images/main-bg.jpg"); */
     background: url("../../assets/images/main_bg1_reduced_smaller.jpg");
     background-position: center;
     background-size: cover;
     position: relative;
     transition: background 1s linear;
-}
-@media screen and (max-width: 400px) {
-    /* different backgrounds */
-    .landing {
-        /* background: url("../../assets/images/small.jpg"); */
-    }
 }
 
 /* end of highest level landing container*/
@@ -262,15 +255,15 @@
 }
 @media screen and (min-width: 800px) {
     .landing_content {
-        /* height: calc(100vh - 6em);
-        top: 6em; */
+        height: calc(100vh - 6em);
+        top: 6em;
         color: white;
    }
 }
 @media screen and (min-width: 1000px) {
     .landing_content {
-        /* height: calc(100vh - 7em);
-        top: 7em; */
+        height: calc(100vh - 7em);
+        top: 7em;
         color: white;
    }
 }
