@@ -47,11 +47,10 @@ const SkillsCard = ({p, skills, labels}) => {
         radius = "10vw"
     }
     else if (width > 1500) {
-        radius = "5vw"
+        radius = "3vw"
     }
     return (
         <div className = {`${classes.skills_card} ${classes2.info_card}`}>
-            <p ref = {paragraph_ref}>{reversed_intro}</p>
             <div className = {`${classes.icon_container} ${classes.hide}`} ref = {icon_container_ref}> 
                 {skills.map((skill, index) => {
                     const angleRad = (index*angle_increment*Math.PI)/180;
@@ -71,37 +70,12 @@ const SkillsCard = ({p, skills, labels}) => {
             </div>
 
             {/* small screens */}
-            <div className = {classes.icon_container} ref = {icon_container_ref} id = "icon_container_small_screen"> 
-                <div>
-                    {skills.slice(0, Math.floor(skills.length / 2)).map((skill, index) => {
-                        return ( 
-                            <>
-                                <div className = {classes.rotating_icon_container}>
-                                    <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index]} 
-                                    onMouseOver={onMouseHover}/>                            
-                                </div>                        
-                            </>
-                        )
-                    })}
-                </div>
-                <div>
-                    {skills.slice(Math.floor(skills.length / 2), skills.length).map((skill, index) => {
-                        return ( 
-                            <>
-                                <div className = {classes.rotating_icon_container}>
-                                    <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index + Math.floor(skills.length / 2)]} 
-                                    onMouseOver={onMouseHover}/>                            
-                                </div>                        
-                            </>
-                        )
-                    })}
-                </div>                                
-            </div>
-            {/* end of small screens */}
 
+                        {/* end of small screens */}
+{/* 
             <div className={classes.label}>
                     <h2>{label}</h2>
-            </div>
+            </div> */}
         </div>
     )
 }

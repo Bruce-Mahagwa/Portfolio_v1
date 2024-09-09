@@ -1,12 +1,12 @@
+.info {
+    /* min-width: 100vh; */
+}
+
 .info_card {
     position: relative;
     height: 100%;  
     width: 100%;
     overflow: hidden;
-}
-.info_card p {
-    color: black;
-    text-align: center;
 }
 .info_card_img {
     width: 100%;
@@ -15,30 +15,145 @@
     border-radius: 50%;
     object-fit: cover;
 }
-@media screen and (min-width: 400px) {
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1rem;
+    width: 100%;
+    margin: 0 auto;
+    perspective: 12vmin;
+    position: absolute;
+    top: 1em;
+}
+@keyframes rotate {
+    from {
+        perspective: 0vmin;
+        transform: rotateY(0deg);
+    }
+}
+.left {
+    transform-origin: right;
+    transform: rotateY(-10deg) scale(2);
+}
+.right {
+    transform-origin: left;
+    transform: rotateY(10deg) scale(2);
+}
+.centre {
+    font-size: 1rem;
+    color: #98ff98;
+    line-height: 1;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    transform-style: preserve-3d;
+    animation: scale 5s ease-in-out forwards 1s;
+}
+.right {
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 3;
+    color: #fcf75e;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
+    animation: rotate 5s ease-in-out backwards 1s;
+}
+@keyframes scale {
+    to {
+        transform: rotate(-180deg) rotateX(-20deg) translateY(30%);
+    }
+}
+@media screen and (min-width: 500px) {
     .info_card {
-        /* width: 80%; */
         text-align: center;
     }
-    .info_card_img {
-        margin-top: 2em;
-        width: 80%;
+    .wrap > * {
+        grid-area: 1 / 1;
     }
-}
-@media screen and (min-width: 600px) {
-    
-    .info_card_img {
-        width: 70%;
+    .left,
+    .right {
+        font-size: max(2rem, 6cqi);
+        line-height: 4;
     }
+    .centre {
+        font-size: max(1rem, 6cqi);
+    }   
 }
-@media screen and (min-width: 800px) {
-    
-    .info_card_img {
-        width: 60%;
+
+/* skills */
+  .skills {
+    position: relative;
+    bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    width: 400px;
+    height: 310px;
+    animation-duration: 2s;
+    animation-name: cube-rotate;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+  
+  /* Isolation creates a new stacking context for mix-blend-mode. See: https://developer.mozilla.org/en-US/docs/Web/CSS/isolation */
+  .isolate {
+    isolation: isolate;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  @keyframes cube-rotate {
+    from {
+      transform: perspective(600px) rotate3d(0.6, 0.05, 0.2, 0deg);
     }
-}
-@media screen and (min-width: 1000px) {    
-    .info_card_img {
-        width: 60%;
+  
+    to {
+      transform: perspective(600px) rotate3d(0.6, 0.05, 0.2, 20deg);
     }
-}
+  }
+  
+  @keyframes shimmer {
+    from {
+      filter: contrast(190%) brightness(500%);
+    }
+  
+    to {
+      filter: contrast(190%) brightness(130%);
+    }
+  }
+  
+  .noise {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    background: linear-gradient(24deg, rgba(50 0 255/10%), CornflowerBlue), url("data:image/svg+xml,%3Csvg viewBox='0 0 400 310' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-clip: text;
+    -webkit-background-clip: text;
+      color: transparent;
+    animation-duration: 2s;
+    animation-name: shimmer;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: antiquewhite;
+    mix-blend-mode: multiply;
+  }
+  
+  /* Special case Chrome. mix-blend-mode is treated differently. Works best in Safari! */
+  @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    .overlay {
+      opacity: 0.6;
+    }
+  }
+

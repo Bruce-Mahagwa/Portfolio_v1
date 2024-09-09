@@ -1,33 +1,22 @@
-"use client"
-// files and functions
-import classes from "./InfoCard.module.css"
-import "./InfoCard.css"
-import { scramble_text } from "@/lib/gsap_landing";
-// components
-import Image from "next/image";
-// hooks
-import { useRef, useEffect } from "react";
-import { useGSAP } from "@gsap/react";
 
-const InfoCard = ({p, img}) => {
-    const paragraph_ref = useRef();
-    const reversed_intro = p.split("").reverse().join("");
-    useGSAP(() => {
-        scramble_text(paragraph_ref.current, p)
-    }, [])
-    
+import classes from "./InfoCard.module.css"
+import img from "../../assets/images/Pic-small_face-removebg-preview.png"
+import Image from "next/image"
+const InfoCard = () => {
     return (
-        <div className = {classes.info_card}>
-            <p ref = {paragraph_ref}>
-                {reversed_intro}
-            </p>
-            <div>
-                <Image src = {img} 
-                className = {classes.info_card_img} 
-                alt = "picture of Bruce smiling" 
-                />
+        <section className={classes.info}>
+            <div className={classes.wrap}>
+                <span className={classes.left}>WEB DEV</span>
+                <span className={classes.centre}>Bruce Mahagwa</span>
+                <span className={classes.right}>DATA ANALYST&nbsp;</span>
             </div>
-        </div>
+            <div className = {classes.skills}>
+                <div className={classes.isolate}>
+                    <div className={classes.noise}>HTML/CSS . JavaScript . Python . React . NextJS . NodeJS . MongoDB . SQL . Excel</div>
+                    <div className={classes.overlay}></div>
+                </div>
+            </div>
+        </section>
     )
 }
 export default InfoCard;

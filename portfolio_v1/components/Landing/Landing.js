@@ -19,6 +19,7 @@ import { IoHome } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { VscProject } from "react-icons/vsc";
 import { MdMarkEmailRead } from "react-icons/md";
+import InfoCard from "./InfoCard";
 
 // main Header function that returns the content of the Header and Landing pages
 function Landing() {
@@ -149,6 +150,7 @@ function Landing() {
 
             {/* landing content */}
             <div className = {classes.landing_content} ref={landing_content}> 
+                <InfoCard />
                 <SkillsCard p = {intro2} skills = {icons} labels = {labels} />
             </div>
             {/* end of landing content */}
