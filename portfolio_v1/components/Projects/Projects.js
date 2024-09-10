@@ -14,6 +14,7 @@ import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
 import { Card } from "flowbite-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { GitHub } from "@mui/icons-material";
 
 const project_data_web = [
     {
@@ -75,26 +76,31 @@ const Projects = () => {
                 >
                     <h2>Web Development</h2>
                         {width > 500 && <div className = {classes.flex_container}>
-                            <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
-                                >
-                                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021
-                                </h5>
-                            <p className="font-normal text-gray-700 dark:text-gray-400">
-                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                            </p>
-                            </Card>
-                            <Card className = {classes.card}
-                                    renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
-                                    >
-                                    <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        Noteworthy technology acquisitions 2021
-                                    </h5>
-                                <p className="font-normal text-gray-700 dark:text-gray-400">
-                                    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                                </p>
-                            </Card>
+                            {project_data_web.map((project) => {
+                                const {name, img_project, description, github, live, extras} = project;
+                                return (
+                                    <Card className = {classes.card}
+                                        renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
+                                        key = {name}>
+                                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            {name}
+                                        </h5>
+                                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                                            {description}
+                                        </p>
+                                        <div>
+                                            <a href = {live} alt = "live version of project" target="_blank">live</a>
+                                            <a href = {github} alt = "github code of project" target="_blank">github</a>
+                                            {extras.length > 0 && extras.map((link, index) => {
+                                                return (
+                                                    <a href = {live} alt = "live version of project" target="_blank">link {index} </a>
+                                                )
+                                            })}
+                                        </div>
+
+                                    </Card>
+                                )
+                            })}
                     </div>}
                     {/* carousel for web dev projects */}
                     {width <= 500 && (
@@ -111,26 +117,31 @@ const Projects = () => {
                 >
                     <h2>Data Analytics</h2>                    
                     {width > 500 && <div className = {classes.flex_container}>
-                        <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
-                                >
-                                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021
-                                </h5>
-                            <p className="font-normal text-gray-700 dark:text-gray-400">
-                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                            </p>
-                        </Card>
-                        <Card className = {classes.card}
-                                renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
-                                >
-                                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021
-                                </h5>
-                            <p className="font-normal text-gray-700 dark:text-gray-400">
-                                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-                            </p>
-                        </Card>
+                    {project_data_data_analysis.map((project) => {
+                                const {name, img_project, description, github, live, extras} = project;
+                                return (
+                                    <Card className = {classes.card}
+                                        renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
+                                        key = {name}>
+                                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            {name}
+                                        </h5>
+                                        <p className="font-normal text-gray-700 dark:text-gray-400">
+                                            {description}
+                                        </p>
+                                        <div>
+                                            <a href = {live} alt = "live version of project" target="_blank">live</a>
+                                            <a href = {github} alt = "github code of project" target="_blank">github</a>
+                                            {extras.length > 0 && extras.map((link, index) => {
+                                                return (
+                                                    <a href = {live} alt = "live version of project" target="_blank">link {index} </a>
+                                                )
+                                            })}
+                                        </div>
+
+                                    </Card>
+                                )
+                            })}
                     </div>}
                     {/* carousel for data analystics projects */}
                     {width <= 500 && (
