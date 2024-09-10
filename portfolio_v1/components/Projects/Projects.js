@@ -42,13 +42,13 @@ const project_data_data_analysis = [
         name: "An exploration into Prosper Bank load data",
         img_project: img_data_2,
         description: "An investigation into loans provided by Prosper Bank - Jupyter Notebook",        
-        live: ""
+        live: "https://public-paws.wmcloud.org/User:BruceMahagwa/Prosper%20Loan%20Data%20Exploration-Part%20One%20(1).ipynb"
     },
     {
         name: "An exploration into twitter archive data",
         img_project: img_data_3,
         description: "An investigation into twitter archive data | Gathering and cleaning data - Jupyter Notebook",
-        live: ""
+        live: "https://public-paws.wmcloud.org/User:BruceMahagwa/wrangle_act%20(1).ipynb"
     }
 ]
 const Projects = () => {
