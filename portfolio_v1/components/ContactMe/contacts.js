@@ -8,7 +8,7 @@ import { CiMail } from "react-icons/ci";
 import { FaMessage } from "react-icons/fa6";
 import { Toaster, toast } from "sonner";
 import emailjs from "@emailjs/browser";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const Contacts = () => {
@@ -47,9 +47,8 @@ const Contacts = () => {
             );
             },
             (error) => {
-            console.log("FAILED...", error);
             toast.error(
-                "There was an error sending your message, please try again later!",
+                "There was an error sending your message. Please send me a direct enail to jacobbruce880@gmail.com!",
                 {
                     id: toastId,
                 }
@@ -58,7 +57,12 @@ const Contacts = () => {
         );
     }
     return (
-        <section className = {classes.contacts_container}>
+        <motion.section className = {classes.contacts_container}
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+        >
             <h1>Contact Me</h1>
             <Toaster richColors={true} />
             <form className = {classes.contacts} onSubmit={sendMeAnEmail}>
@@ -102,7 +106,7 @@ const Contacts = () => {
                 </div>
                 <Button type="submit">Submit</Button>
             </form>
-        </section>
+        </motion.section>
     )
 }
 export default Contacts;

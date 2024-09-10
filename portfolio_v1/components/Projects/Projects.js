@@ -1,18 +1,23 @@
 "use client"
 // files
 import classes from "./Projects.module.css"
-import img_project from "./images/main_bg1_reduced.jpg"
 import ProjectsCarousel from "./ProjectsCarousel";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
+// images
+import img_web_1 from "./images/D3Visualization.jpg";
+import img_web_2 from "./images/Thingswelike.jpg"
+import img_data_1 from "./images/wikimediaarticles.jpg"
+import img_data_2 from "./images/Prosperloan.jpg"
+import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
 // dependencies
 import { Card } from "flowbite-react";
 import Image from "next/image";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 const project_data_web = [
     {
         name: "React Visualization Library",
-        img_project: img_project,
+        img_project: img_web_1,
         description: "A data visualization interface made with React and D3js",
         github: "",
         live: "",
@@ -20,7 +25,7 @@ const project_data_web = [
     },
     {
         name: "ThingsWeLike",
-        img_project: img_project,
+        img_project: img_web_2,
         description: "A social media site made with MERN stack and Redux Toolkit",
         github: "",
         live: ""
@@ -29,19 +34,19 @@ const project_data_web = [
 const project_data_data_analysis = [
     {
         name: "An analysis on the Quality Scores of Wikimedia Articles",
-        img_project: img_project,
+        img_project: img_data_1,
         description: "An investigation into the quality scores and feature values of Wikimedia articles - Jupyter Notebook and Python",
         live: "https://public-paws.wmcloud.org/User:BruceMahagwa/Microtask.ipynb"
     },
     {
         name: "An exploration into Prosper Bank load data",
-        img_project: img_project,
+        img_project: img_data_2,
         description: "An investigation into loans provided by Prosper Bank - Jupyter Notebook",        
         live: ""
     },
     {
         name: "An exploration into twitter archive data",
-        img_project: img_project,
+        img_project: img_data_3,
         description: "An investigation into twitter archive data | Gathering and cleaning data - Jupyter Notebook",
         live: ""
     }
@@ -53,7 +58,12 @@ const Projects = () => {
             <h1>Projects</h1>
             <div className = {classes.projects_container}>
                 {/* web dev */}
-                <div className={classes.web_dev}>
+                <motion.div className={classes.web_dev}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
                     <h2>Web Development</h2>
                         {width > 500 && <div className = {classes.flex_container}>
                             <Card className = {classes.card}
@@ -82,9 +92,14 @@ const Projects = () => {
                         <ProjectsCarousel data = {project_data_web}/>
                     )}
                     {/* end of carouself for web dev projects */}
-                </div>
+                </motion.div>
                 {/* data analysis */}
-                <div className={classes.data_analytics}>
+                <motion.div className={classes.data_analytics} 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
                     <h2>Data Analytics</h2>                    
                     {width > 500 && <div className = {classes.flex_container}>
                         <Card className = {classes.card}
@@ -113,7 +128,7 @@ const Projects = () => {
                         <ProjectsCarousel data = {project_data_data_analysis} />
                     )}
                     {/* end of carousel for data analytic projects */}
-                </div>
+                </motion.div>
             </div>
         </section>
     )
