@@ -1,10 +1,9 @@
-
+// files
 import classes from "./InfoCard.module.css"
-import img from "../../assets/images/Pic-small_face-removebg-preview.png"
-import Image from "next/image"
+
 const InfoCard = () => {
     return (
-        <section className={classes.info}>
+        <section className={classes.info_card}>
             <div className={classes.wrap}>
                 <span className={classes.left}>WEB DEV</span>
                 <span className={classes.centre}>Bruce Mahagwa</span>

@@ -3,6 +3,7 @@
 import classes from "./Landing.module.css"
 import SkillsCard from "./SkillsCard";
 import {info_card} from "../../temp_database/info_card_db"
+import InfoCard from "./InfoCard";
 
 // import custom functions and animation effects
 import {removeIntroTextContainer, 
@@ -19,7 +20,6 @@ import { IoHome } from "react-icons/io5";
 import { IoPersonSharp } from "react-icons/io5";
 import { VscProject } from "react-icons/vsc";
 import { MdMarkEmailRead } from "react-icons/md";
-import InfoCard from "./InfoCard";
 
 // main Header function that returns the content of the Header and Landing pages
 function Landing() {
