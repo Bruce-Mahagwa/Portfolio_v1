@@ -7,6 +7,7 @@ import {useRef} from "react";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 import { useAnimate, stagger } from "framer-motion";
 import { useEffect } from "react";
+import { Block } from "@mui/icons-material";
 
 const SkillsCard = ({skills, labels}) => {
     const icon_container_ref = useRef();
@@ -29,13 +30,11 @@ const SkillsCard = ({skills, labels}) => {
 
     useEffect(() => {
         (async () => {
-            console.log("here")
             await animate(scope.current, {opacity: 1}, {duration: 0.3});
-            await animate("div", {opacity: 1}, {delay: stagger(1)});
-            console.log("here")
+            await animate("div", {display: "block"}, {delay: stagger(1)});
         })()
     }, [])
-    console.log("rendered")
+
     return (
         <div className = {`${classes.skills_card}`}>
             <div className = {`${classes.icon_container}`} ref = {scope}>             
@@ -47,7 +46,6 @@ const SkillsCard = ({skills, labels}) => {
                         <>
                             <div style = {{
                                 transform: `translate(${x}, ${y})`,
-                                opacity: 0
                             }} className = {classes.rotating_icon_container}>
                                 <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index]} 
                                 />                            

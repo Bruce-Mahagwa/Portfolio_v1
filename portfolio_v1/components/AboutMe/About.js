@@ -5,8 +5,7 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // dependencies
 import { Timeline } from "flowbite-react";
 import { IoCalendarOutline } from "react-icons/io5";
-import { useEffect} from "react";
-import { useAnimate, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 // variables
 
 const job_tasks = [
@@ -58,60 +57,77 @@ const education = [
 
 const About = () => {
     const width = useDeviceWidth();
-    const [scope, animate] = useAnimate();
-    const isInView = useInView(scope);
-
-    useEffect(() => {
-        if (isInView) {
-            animate(scope.current, {opacity: 1, duration: 2})
-            console.log(scope.current)
-        }
-    }, [isInView]);
     return (
-        <section className = {classes.about}  ref = {scope}>
+        <section className = {classes.about}>
              <h1>Web Dev and Data Analyst</h1>
              <div>
                  <h2>Experience</h2>
              </div>
             <Timeline>
                 <Timeline.Item>
-                    <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-1" >
-                        <Timeline.Time>April 2024 - June 2024</Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50 text-left">Yashio Kenya</Timeline.Title>
-                        <Timeline.Body>
-                            {Object.keys(job_tasks[0].tasks).map((key) => {
-                                const task = job_tasks[0].tasks[key]
-                                return (
-                                    <p key = {task}>{task}</p>
-                                )
-                            })}
-                        </Timeline.Body>                    
-                    </Timeline.Content>
+                    <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                    >
+                        <Timeline.Point icon={IoCalendarOutline} />
+                        <Timeline.Content className = "px-1" >
+                            <Timeline.Time>April 2024 - June 2024</Timeline.Time>
+                            <Timeline.Title className = "text-white opacity-50 text-left">Yashio Kenya</Timeline.Title>
+                            <Timeline.Body>
+                                {Object.keys(job_tasks[0].tasks).map((key) => {
+                                    const task = job_tasks[0].tasks[key]
+                                    return (
+                                        <p key = {task}>{task}</p>
+                                    )
+                                })}
+                            </Timeline.Body>                    
+                        </Timeline.Content>
+                    </motion.div>
                 </Timeline.Item>
 
-                <Timeline.Item>
-                    <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-1">
-                        <Timeline.Time>March 2024 - April 2024 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50 text-left">Outreachy</Timeline.Title>
-                        <Timeline.Body>
-                        {Object.keys(job_tasks[1].tasks).map((key) => {
-                                const task = job_tasks[0].tasks[key]
-                                return (
-                                    <p key = {task}>{task}</p>
-                                )
-                            })}
-                        </Timeline.Body>                    
-                    </Timeline.Content>
-                </Timeline.Item>
-            </Timeline>
+            <Timeline.Item>
+                <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                >
+                <Timeline.Point icon={IoCalendarOutline} />
+                <Timeline.Content className = "px-1">
+                    <Timeline.Time>March 2024 - April 2024 </Timeline.Time>
+                    <Timeline.Title className = "text-white opacity-50 text-left">Outreachy</Timeline.Title>
+                    <Timeline.Body>
+                    {Object.keys(job_tasks[1].tasks).map((key) => {
+                            const task = job_tasks[0].tasks[key]
+                            return (
+                                <p key = {task}>{task}</p>
+                            )
+                        })}
+                    </Timeline.Body>                    
+                </Timeline.Content>
+                </motion.div>
+            </Timeline.Item>
+        </Timeline>
 
-             <div>
-                 <h2>Education</h2>
-             </div>
-            {width > 620 && <Timeline horizontal className="flex justify-center">
-                <Timeline.Item>
+        <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+        >
+            <h2>Education</h2>
+        </motion.div>
+        {width > 620 && <Timeline horizontal className="flex justify-center">
+            <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                style={{display:"flex"}}
+            >
+                <Timeline.Item>   
                     <Timeline.Point icon={IoCalendarOutline} />
                     <Timeline.Content className = "pr-8 py-4">
                         <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
@@ -121,7 +137,8 @@ const About = () => {
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
-                <Timeline.Item>
+
+                <Timeline.Item>                        
                     <Timeline.Point icon={IoCalendarOutline} />
                     <Timeline.Content className = "pr-8 py-4">
                         <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
@@ -131,6 +148,7 @@ const About = () => {
                         </Timeline.Body>                    
                     </Timeline.Content>
                 </Timeline.Item>
+
                 <Timeline.Item>
                     <Timeline.Point icon={IoCalendarOutline} />
                     <Timeline.Content className = "px-1 py-4">
@@ -141,10 +159,17 @@ const About = () => {
                         </Timeline.Body>                     
                     </Timeline.Content>
                 </Timeline.Item>
-            </Timeline>
+            </motion.div>
+        </Timeline>
         }
         {width <= 620 && <Timeline>
                 <Timeline.Item>
+                    <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
                     <Timeline.Point icon={IoCalendarOutline} />
                     <Timeline.Content className = "px-1 pb-4">
                         <Timeline.Time>June 2022 - November 2023 </Timeline.Time>
@@ -153,27 +178,44 @@ const About = () => {
                             <h3 className="text-left text-xl">Software Engineering</h3>
                         </Timeline.Body>                    
                     </Timeline.Content>
+                    </motion.div>
                 </Timeline.Item>
+
                 <Timeline.Item>
-                    <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-1 pb-4">
-                        <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50 text-left">Udacity</Timeline.Title>
-                        <Timeline.Body>
-                            <h3 className="text-left text-xl">Data Analysis</h3>
-                        </Timeline.Body>                    
-                    </Timeline.Content>
+                    <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                        <Timeline.Point icon={IoCalendarOutline} />
+                        <Timeline.Content className = "px-1 pb-4">
+                            <Timeline.Time>July 2022 - October 2022 </Timeline.Time>
+                            <Timeline.Title className = "text-white opacity-50 text-left">Udacity</Timeline.Title>
+                            <Timeline.Body>
+                                <h3 className="text-left text-xl">Data Analysis</h3>
+                            </Timeline.Body>                    
+                        </Timeline.Content>
+                    </motion.div>
                 </Timeline.Item>
+            
                 <Timeline.Item>
-                    <Timeline.Point icon={IoCalendarOutline} />
-                    <Timeline.Content className = "px-1 pb-4">
-                        <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
-                        <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
-                        <Timeline.Body>
-                            <h3 className="text-left text-xl">Bachelor's in Economics</h3>
-                        </Timeline.Body>                     
-                    </Timeline.Content>
-                </Timeline.Item>
+                    <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                        <Timeline.Point icon={IoCalendarOutline} />
+                        <Timeline.Content className = "px-1 pb-4">
+                            <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
+                            <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
+                            <Timeline.Body>
+                                <h3 className="text-left text-xl">Bachelor's in Economics</h3>
+                            </Timeline.Body>                     
+                        </Timeline.Content>
+                    </motion.div>
+                </Timeline.Item>            
             </Timeline>}
         </section>
     )

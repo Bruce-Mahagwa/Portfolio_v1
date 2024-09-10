@@ -30,7 +30,8 @@
 }    
 .rotating_icon_container {
     position: absolute;
-    opacity: 1;
+    /* will change using framer animation */
+    display: none;
 }    
 @keyframes rotate {
     0% {
