@@ -110,18 +110,18 @@ function Landing() {
             <nav className = {classes.main_navigation} ref={large_screen_nav}>
                 <ul>
                     <li>
-                        <Link href = "#landing" data-text = "Home_main">Home</Link>
+                        <Link href = "#landing" data-text = "Home_main" className = {classes.link}>Home</Link>
                     </li>
                     <li>
-                        <Link href= "#about" data-text = "About_main">About</Link>
+                        <Link href= "#about" data-text = "About_main" className = {classes.link}>About</Link>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <Link href = "#projects" data-text = "Projects_main">Projects</Link>
+                        <Link href = "#projects" data-text = "Projects_main" className = {classes.link}>Projects</Link>
                     </li>  
                     <li>
-                        <Link href = "#contacts" data-text = "Contacts_main">Contacts</Link>
+                        <Link href = "#contacts" data-text = "Contacts_main" className = {classes.link}>Contacts</Link>
                     </li>
                 </ul>
             </nav>

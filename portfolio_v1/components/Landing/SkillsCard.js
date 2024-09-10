@@ -5,29 +5,40 @@ import Image from "next/image";
 // hooks
 import {useRef} from "react";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
+import { useAnimate, stagger } from "framer-motion";
+import { useEffect } from "react";
 
 const SkillsCard = ({skills, labels}) => {
     const icon_container_ref = useRef();
     const width = useDeviceWidth()
     const angle_increment = 360/skills.length;    
-
+    const [scope, animate] = useAnimate();
     let radius = "30vw";
     if (width > 650) {
-        radius = "22vw"
+        radius = "25vw"
     }
     else if (width > 900) {
-        radius = "16vw"
+        radius = "13vw"
     }
     else if (width > 1024) {
-        radius = "10vw"
+        radius = "9vw"
     }
     else if (width > 1500) {
         radius = "3vw"
     }
 
+    useEffect(() => {
+        (async () => {
+            console.log("here")
+            await animate(scope.current, {opacity: 1}, {duration: 0.3});
+            await animate("div", {opacity: 1}, {delay: stagger(1)});
+            console.log("here")
+        })()
+    }, [])
+    console.log("rendered")
     return (
         <div className = {`${classes.skills_card}`}>
-            <div className = {`${classes.icon_container}`} ref = {icon_container_ref}> 
+            <div className = {`${classes.icon_container}`} ref = {scope}>             
                 {skills.map((skill, index) => {
                     const angleRad = (index*angle_increment*Math.PI)/180;
                     const x = `calc(${radius} * ${Math.cos(angleRad)})`
@@ -36,6 +47,7 @@ const SkillsCard = ({skills, labels}) => {
                         <>
                             <div style = {{
                                 transform: `translate(${x}, ${y})`,
+                                opacity: 0
                             }} className = {classes.rotating_icon_container}>
                                 <Image src = {skill} alt = {skill} className = {`${classes.skills_icon} skills_icon_alternative`} data-skill = {labels[index]} 
                                 />                            

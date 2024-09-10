@@ -5,7 +5,8 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // dependencies
 import { Timeline } from "flowbite-react";
 import { IoCalendarOutline } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
+import { useAnimate, useInView } from "framer-motion";
 // variables
 
 const job_tasks = [
@@ -57,8 +58,17 @@ const education = [
 
 const About = () => {
     const width = useDeviceWidth();
+    const [scope, animate] = useAnimate();
+    const isInView = useInView(scope);
+
+    useEffect(() => {
+        if (isInView) {
+            animate(scope.current, {opacity: 1, duration: 2})
+            console.log(scope.current)
+        }
+    }, [isInView]);
     return (
-        <section className = {classes.about}>
+        <section className = {classes.about}  ref = {scope}>
              <h1>Web Dev and Data Analyst</h1>
              <div>
                  <h2>Experience</h2>
