@@ -115,6 +115,7 @@
     animation-name: shimmer;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    font-weight: 900;
   }
   
   .overlay {

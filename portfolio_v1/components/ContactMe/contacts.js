@@ -57,15 +57,16 @@ const Contacts = () => {
         );
     }
     return (
-        <motion.section className = {classes.contacts_container}
+        <section className = {classes.contacts_container} id = "contacts">
+            <h1>Contact Me</h1>
+            <Toaster richColors={true} />
+            <motion.form className = {classes.contacts} onSubmit={sendMeAnEmail}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-        >
-            <h1>Contact Me</h1>
-            <Toaster richColors={true} />
-            <form className = {classes.contacts} onSubmit={sendMeAnEmail}>
+            
+            >
                 {/* email */}
                 <div className="mb-3">
                     <div className="mb-2 block">
@@ -105,8 +106,8 @@ const Contacts = () => {
                     }/>
                 </div>
                 <Button type="submit">Submit</Button>
-            </form>
-        </motion.section>
+            </motion.form>
+        </section>
     )
 }
 export default Contacts;

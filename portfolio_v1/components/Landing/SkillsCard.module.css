@@ -4,7 +4,6 @@
     width: 100%;
     overflow: hidden;
     display: none;
-    /*  */
 }
 @media screen and (min-width: 500px) {
     .skills_card {
@@ -26,7 +25,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    animation: rotate 20s infinite linear;
+    animation: rotate 30s infinite linear;
 }    
 .rotating_icon_container {
     position: absolute;

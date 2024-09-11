@@ -12,7 +12,7 @@ export function removeIntroTextContainer(intro_text_container, landing_content) 
         // lower the z-index so that we can click on the nav links
         onComplete: () => {
             gsap.to(landing_content, {
-                duration: 2,
+                duration: 1,
                 opacity: 1
             })
         }

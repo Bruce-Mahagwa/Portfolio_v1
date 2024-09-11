@@ -97,13 +97,13 @@ function Landing() {
     return (
         <div className = {classes.landing} id = "landing" ref = {landing_page}>
             {/* intro message container */}
-            {/* <div ref = {intro_message_container_ref} className = {classes.intro_message_container}>
+            <div ref = {intro_message_container_ref} className = {classes.intro_message_container}>
                 <div className = {classes.intro_message}>
                     <h1>WELCOME&nbsp;&nbsp;</h1>
                     <h2>TO MY&nbsp;&nbsp;</h2>
                     <h1>PORTFOLIO</h1>
-                </div>
-            </div> */}
+                </div> 
+            </div>
             {/* end of intro message container */}
 
             {/* navigation */}

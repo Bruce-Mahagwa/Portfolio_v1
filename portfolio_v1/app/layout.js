@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Bruce Mahagwa Portfolio",
-  description: "Hosts the Portfolio of Bruce Mahagwa, software engineer and data analyst",
+  description: "Hosts the Portfolio of Bruce Mahagwa, software engineer, full stack web developer, and data analyst",
 };
 
 export default function RootLayout({ children}) {

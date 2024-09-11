@@ -3,14 +3,11 @@ import classes from "./SkillsCard.module.css";
 // components
 import Image from "next/image";
 // hooks
-import {useRef} from "react";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 import { useAnimate, stagger } from "framer-motion";
 import { useEffect } from "react";
-import { Block } from "@mui/icons-material";
 
 const SkillsCard = ({skills, labels}) => {
-    const icon_container_ref = useRef();
     const width = useDeviceWidth()
     const angle_increment = 360/skills.length;    
     const [scope, animate] = useAnimate();
@@ -31,7 +28,7 @@ const SkillsCard = ({skills, labels}) => {
     useEffect(() => {
         (async () => {
             await animate(scope.current, {opacity: 1}, {duration: 0.3});
-            await animate("div", {display: "block"}, {delay: stagger(1)});
+            await animate("div", {display: "block"}, {delay: stagger(0.5)});
         })()
     }, [])
 

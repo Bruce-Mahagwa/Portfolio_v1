@@ -11,7 +11,7 @@ const InfoCard = () => {
             </div>
             <div className = {classes.skills}>
                 <div className={classes.isolate}>
-                    <div className={classes.noise}>HTML/CSS . JavaScript . Python . React . NextJS . NodeJS . MongoDB . SQL . Excel</div>
+                    <div className={classes.noise}>HTML/CSS . JavaScript . Python . React . NextJS . NodeJS . MongoDB . SQL . Excel . Statistics</div>
                     <div className={classes.overlay}></div>
                 </div>
             </div>

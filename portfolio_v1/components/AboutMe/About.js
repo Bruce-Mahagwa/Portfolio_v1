@@ -58,7 +58,7 @@ const education = [
 const About = () => {
     const width = useDeviceWidth();
     return (
-        <section className = {classes.about}>
+        <section className = {classes.about} id = "about">
              <h1>Web Dev and Data Analyst</h1>
              <div>
                  <h2>Experience</h2>

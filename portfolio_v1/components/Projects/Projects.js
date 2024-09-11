@@ -6,7 +6,7 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // images
 import img_web_1 from "./images/D3Visualization.jpg";
 import img_web_2 from "./images/Thingswelike.jpg"
-import img_web_3 from "./images/vlc_project.png"
+import img_web_3 from "./images/vlc_2.jpg"
 import img_data_1 from "./images/wikimediaarticles.jpg"
 import img_data_2 from "./images/Prosperloan.jpg"
 import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
@@ -14,13 +14,12 @@ import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
 import { Card } from "flowbite-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { GitHub } from "@mui/icons-material";
 
 const project_data_web = [
     {
         name: "React Visualization Library",
         img_project: img_web_1,
-        description: "A data visualization interface made with React and D3js",
+        description: "A data visualization interface made with React and D3js. Contains bar graphs, scatter plots, and histograms.",
         github: "https://github.com/Bruce-Mahagwa/d3_visualizer",
         live: "https://simple-visualizer.vercel.app",
         extras: ["https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv",
@@ -29,14 +28,14 @@ const project_data_web = [
     {
         name: "ThingsWeLike",
         img_project: img_web_2,
-        description: "A social media site made with MERN stack and Redux Toolkit",
+        description: "A social media site made with MERN stack and Redux Toolkit. Has realtime communication, ability to join social spaces and ability to create unique profile.",
         github: "https://github.com/Bruce-Mahagwa/ThingsWeLike2",
         live: "https://things-we-like-client.vercel.app"
     },
     {
         name: "VLC Clone",
         img_project: img_web_3,
-        description: "A clone of the popular vlc app",
+        description: "A clone of the popular vlc app. Has video functionality and supports crud operations on videos.",
         github: "https://github.com/Bruce-Mahagwa/Vlc_version_1",
         live: "https://bruce-mahagwa.github.io/Vlc_version_1"
     }
@@ -64,7 +63,7 @@ const project_data_data_analysis = [
 const Projects = () => {
     const width = useDeviceWidth();
     return (  
-        <section className={classes.projects}>
+        <section className={classes.projects} id = "projects">  
             <h1>Projects</h1>
             <div className = {classes.projects_container}>
                 {/* web dev */}
@@ -88,15 +87,15 @@ const Projects = () => {
                                         <p className="font-normal text-gray-700 dark:text-gray-400">
                                             {description}
                                         </p>
-                                        <div>
-                                            <a href = {live} alt = "live version of project" target="_blank">live</a>
-                                            <a href = {github} alt = "github code of project" target="_blank">github</a>
-                                            {extras.length > 0 && extras.map((link, index) => {
+                                        <div className = {classes.project_links}>
+                                            <a href = {live} alt = "live version of project" target="_blank" className = {classes.project_link}>live</a>
+                                            <a href = {github} alt = "github code of project" target="_blank" className = {classes.project_link}>github</a>
+                                            {extras?.length > 0 && extras.map((link, index) => {
                                                 return (
-                                                    <a href = {live} alt = "live version of project" target="_blank">link {index} </a>
+                                                    <a href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Test-data-{index + 1}</a>
                                                 )
                                             })}
-                                        </div>
+                                        </div> 
 
                                     </Card>
                                 )
@@ -129,12 +128,12 @@ const Projects = () => {
                                         <p className="font-normal text-gray-700 dark:text-gray-400">
                                             {description}
                                         </p>
-                                        <div>
-                                            <a href = {live} alt = "live version of project" target="_blank">live</a>
-                                            <a href = {github} alt = "github code of project" target="_blank">github</a>
-                                            {extras.length > 0 && extras.map((link, index) => {
+                                        <div className = {classes.project_links}>
+                                            <a href = {live} alt = "live version of project" target="_blank" className = {classes.project_link}>live</a>
+                                            <a href = {github} alt = "github code of project" target="_blank" className = {classes.project_link}>github</a>
+                                            {extras?.length > 0 && extras.map((link, index) => {
                                                 return (
-                                                    <a href = {live} alt = "live version of project" target="_blank">link {index} </a>
+                                                    <a href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Data input {index}</a>
                                                 )
                                             })}
                                         </div>
