@@ -92,7 +92,7 @@ const Projects = () => {
                                             <a href = {github} alt = "github code of project" target="_blank" className = {classes.project_link}>github</a>
                                             {extras?.length > 0 && extras.map((link, index) => {
                                                 return (
-                                                    <a href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Test-data-{index + 1}</a>
+                                                    <a key = {link} href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Test-data-{index + 1}</a>
                                                 )
                                             })}
                                         </div> 
@@ -133,7 +133,7 @@ const Projects = () => {
                                             <a href = {github} alt = "github code of project" target="_blank" className = {classes.project_link}>github</a>
                                             {extras?.length > 0 && extras.map((link, index) => {
                                                 return (
-                                                    <a href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Data input {index}</a>
+                                                    <a key = {link} href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Data input {index}</a>
                                                 )
                                             })}
                                         </div>

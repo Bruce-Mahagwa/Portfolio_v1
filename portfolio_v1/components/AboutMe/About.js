@@ -155,7 +155,7 @@ const About = () => {
                         <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
                         <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
                         <Timeline.Body>
-                            <h3 className="text-left text-lg">Bachelor's in Economics</h3>
+                            <h3 className="text-left text-lg">Bachelors in Economics</h3>
                         </Timeline.Body>                     
                     </Timeline.Content>
                 </Timeline.Item>
@@ -211,7 +211,7 @@ const About = () => {
                             <Timeline.Time>February 2018 - December 2022 </Timeline.Time>
                             <Timeline.Title className = "text-white opacity-50 text-left">University of Nairobi</Timeline.Title>
                             <Timeline.Body>
-                                <h3 className="text-left text-xl">Bachelor's in Economics</h3>
+                                <h3 className="text-left text-xl">Bachelors in Economics</h3>
                             </Timeline.Body>                     
                         </Timeline.Content>
                     </motion.div>

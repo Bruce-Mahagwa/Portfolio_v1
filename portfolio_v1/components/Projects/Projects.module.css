@@ -6,9 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.projects_container {
-    border: 2px solid red;
-}
+
 .web_dev, .data_analytics {
     width: 100%;
     min-height: 600px;

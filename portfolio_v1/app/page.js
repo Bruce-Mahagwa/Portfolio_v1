@@ -5,7 +5,7 @@ import "./globals.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Projects from "@/components/Projects/Projects";
 import Contacts from "@/components/ContactMe/contacts";
-
+import { Analytics } from "@vercel/analytics/react"
 export default function Home() {
   return (
     <>
@@ -13,6 +13,7 @@ export default function Home() {
       <About />
       <Projects />
       <Contacts />
+      <Analytics />
     </>
   );
 }

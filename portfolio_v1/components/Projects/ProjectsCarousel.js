@@ -10,7 +10,7 @@ const ProjectsCarousel = ({data}) => {
             {data.map((project) => {
                 const {name, img_project, description, github, live, extras} = project;                
                 return (
-                    <Carousel.Item className = "pb-10">
+                    <Carousel.Item className = "pb-10" key = {name}>
                         <Card className = {classes.card}
                             renderImage={() => <Image width={500} height={500} src={img_project} alt="image 1" className = {classes.portfolio_img}/>}
                             key = {name}>
@@ -25,7 +25,7 @@ const ProjectsCarousel = ({data}) => {
                                 <a href = {github} alt = "github code of project" target="_blank" className = {classes.project_link}>github</a>
                                 {extras?.length > 0 && extras.map((link, index) => {
                                     return (
-                                        <a href = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Test-data-{index + 1}</a>
+                                        <a key = {link} href  = {link} alt = "live version of project" target="_blank" className = {classes.project_link}>Test-data-{index + 1}</a>
                                     )
                                 })}
                             </div>
