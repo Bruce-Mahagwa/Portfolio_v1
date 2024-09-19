@@ -7,6 +7,7 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 import img_web_1 from "./images/D3Visualization.jpg";
 import img_web_2 from "./images/Thingswelike.jpg"
 import img_web_3 from "./images/vlc_2.jpg"
+import img_web_4 from "./images/landing_small.jpg";
 import img_data_1 from "./images/wikimediaarticles.jpg"
 import img_data_2 from "./images/Prosperloan.jpg"
 import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
@@ -17,13 +18,11 @@ import { motion } from "framer-motion";
 
 const project_data_web = [
     {
-        name: "React Visualization Library",
-        img_project: img_web_1,
-        description: "A data visualization interface made with React and D3js. Contains bar graphs, scatter plots, and histograms.",
-        github: "https://github.com/Bruce-Mahagwa/d3_visualizer",
-        live: "https://simple-visualizer.vercel.app",
-        extras: ["https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv",
-    "https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv"]
+        name: "Mental Health Diary",
+        img_project: img_web_4,
+        description: "A diary application that allows users to make and share diary entries",
+        github: "https://github.com/Bruce-Mahagwa/MentalHealthDiary",
+        live: "https://mental-health-diary.vercel.app/",
     },
     {
         name: "ThingsWeLike",
@@ -32,6 +31,16 @@ const project_data_web = [
         github: "https://github.com/Bruce-Mahagwa/ThingsWeLike2",
         live: "https://things-we-like-client.vercel.app"
     },
+    {
+        name: "React Visualization Library",
+        img_project: img_web_1,
+        description: "A data visualization interface made with React and D3js. Contains bar graphs, scatter plots, and histograms.",
+        github: "https://github.com/Bruce-Mahagwa/d3_visualizer",
+        live: "https://simple-visualizer.vercel.app",
+        extras: ["https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv",
+    "https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv"]
+    },
+    
     {
         name: "VLC Clone",
         img_project: img_web_3,
