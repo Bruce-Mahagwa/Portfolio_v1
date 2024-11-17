@@ -39,14 +39,6 @@ const project_data_web = [
         live: "https://simple-visualizer.vercel.app",
         extras: ["https://gist.githubusercontent.com/garrettgman/9629323/raw/ee5dfc039fd581cb467cc69c226ea2524913c3d8/deck.csv",
     "https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv"]
-    },
-    
-    {
-        name: "VLC Clone",
-        img_project: img_web_3,
-        description: "A clone of the popular vlc app. Has video functionality and supports crud operations on videos.",
-        github: "https://github.com/Bruce-Mahagwa/Vlc_version_1",
-        live: "https://bruce-mahagwa.github.io/Vlc_version_1"
     }
 ]
 const project_data_data_analysis = [
