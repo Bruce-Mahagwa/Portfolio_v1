@@ -8,6 +8,7 @@ import img_web_1 from "./images/D3Visualization.jpg";
 import img_web_2 from "./images/Thingswelike.jpg"
 import img_web_3 from "./images/vlc_2.jpg"
 import img_web_4 from "./images/landing_small.jpg";
+import img_web_5 from "./images/weglot.png";
 import img_data_1 from "./images/wikimediaarticles.jpg"
 import img_data_2 from "./images/Prosperloan.jpg"
 import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
@@ -17,6 +18,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const project_data_web = [
+    {
+        name: "Weglot Clone",
+        img_project: img_web_5,
+        description: "A clone of the Weglot website made with ReactJS and Tailwindcss",
+        github: "https://github.com/Bruce-Mahagwa/Weglot",
+        live: "https://weglotsite.vercel.app/"
+    },
     {
         name: "Mental Health Diary",
         img_project: img_web_4,
