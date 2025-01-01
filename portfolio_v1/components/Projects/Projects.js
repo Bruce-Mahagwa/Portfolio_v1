@@ -38,7 +38,7 @@ const project_data_web = [
     {
         name: "Mental Health Diary",
         img_project: img_web_4,
-        description: "A diary application that allows users to make and share diary entries",
+        description: "A diary application that allows users to make and share diary entries. Made with the MERN stack and Redux Toolkit.",
         github: "https://github.com/Bruce-Mahagwa/MentalHealthDiary",
         live: "https://mental-health-diary.vercel.app/",
     },
