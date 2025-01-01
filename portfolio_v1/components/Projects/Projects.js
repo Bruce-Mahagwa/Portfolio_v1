@@ -7,17 +7,27 @@ import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 import img_web_1 from "./images/D3Visualization.jpg";
 import img_web_2 from "./images/Thingswelike.jpg"
 import img_web_3 from "./images/vlc_2.jpg"
+import img_web_6 from "./images/weglot_germany.png";
 import img_web_4 from "./images/landing_small.jpg";
 import img_web_5 from "./images/weglot.png";
 import img_data_1 from "./images/wikimediaarticles.jpg"
 import img_data_2 from "./images/Prosperloan.jpg"
 import img_data_3 from "./images/Exploration_twitter_dataset.jpg"
+
 // dependencies
 import { Card } from "flowbite-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const project_data_web = [
+    {
+        name: "Weglot Germany Clone",
+        img_project: img_web_6,
+        description: "A clone of the Weglot Germany website made with ReactJS and Tailwindcss",
+        github: "https://github.com/Bruce-Mahagwa/WeglotGermany",
+        live: "https://weglot-germany.vercel.app/"
+    },
+
     {
         name: "Weglot Clone",
         img_project: img_web_5,
