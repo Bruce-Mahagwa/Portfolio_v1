@@ -4,9 +4,7 @@ import classes from "./Projects.module.css"
 import ProjectsCarousel from "./ProjectsCarousel";
 import useDeviceWidth from "@/lib/hooks/useDeviceWidth";
 // images
-import img_web_1 from "./images/D3Visualization.jpg";
 import img_web_2 from "./images/Thingswelike.jpg"
-import img_web_3 from "./images/vlc_2.jpg"
 import img_web_6 from "./images/weglot_germany.png";
 import img_web_4 from "./images/landing_small.jpg";
 import img_web_5 from "./images/weglot.png";

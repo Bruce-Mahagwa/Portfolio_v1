@@ -12,19 +12,17 @@ const SkillsCard = ({skills, labels}) => {
     const angle_increment = 360/skills.length;    
     const [scope, animate] = useAnimate();
     let radius = "30vw";
-    if (width > 650) {
-        radius = "25vw"
+    
+    if (width > 1500) {
+        radius = "15vw"
     }
     else if (width > 900) {
-        radius = "13vw"
+        radius = "20vw"
     }
-    else if (width > 1024) {
-        radius = "9vw"
+    else if (width > 650) {
+        radius = "25vw"
     }
-    else if (width > 1500) {
-        radius = "3vw"
-    }
-
+    
     useEffect(() => {
         (async () => {
             await animate(scope.current, {opacity: 1}, {duration: 0.3});
