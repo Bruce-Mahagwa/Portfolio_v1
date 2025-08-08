@@ -10,6 +10,17 @@ import { motion } from "framer-motion";
 
 const job_tasks = [
     {
+        id: "Niebex",
+        tasks: {
+            1: "Developed reusable React JS components using StorybookJS",
+            2: "Implemented a custom design system to ensure consistency across the application",
+            3: "Created a comprehensive documentation for the design system, detailing component usage and guidelines",
+            4: "Implemented central state management system using Redux Toolkit to manage application state efficiently",
+            5: "Tested components using Jest and React Testing Library to ensure reliability and performance",
+            6: "Collaborated with the design team to ensure the design system met the needs of the application and its users",
+        }
+    },
+    {
         id: "Yashio",
         tasks: {
             1: "Developed the Work Business Structure document to outline the migration process from Astro js to Next Js",

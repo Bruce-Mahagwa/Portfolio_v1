@@ -148,7 +148,7 @@ function Landing() {
             </nav>
             {/* end of navigation */}
 
-            {/* landing content */}
+            {/* landing content */} 
             <div className = {classes.landing_content} ref={landing_content}> 
                 <InfoCard />
                 <SkillsCard p = {intro2} skills = {icons} labels = {labels} />

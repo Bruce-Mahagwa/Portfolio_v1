@@ -22,7 +22,6 @@ const SkillsCard = ({skills, labels}) => {
     else if (width > 650) {
         radius = "25vw"
     }
-    
     useEffect(() => {
         (async () => {
             await animate(scope.current, {opacity: 1}, {duration: 0.3});
