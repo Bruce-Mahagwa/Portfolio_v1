@@ -5,9 +5,9 @@ const InfoCard = () => {
     return (
         <section className={classes.info_card}>
             <div className={classes.wrap}> 
-                <span className={classes.left}>WEB DEV</span>
+                <span className={classes.left}>DATA ANALYST</span>
                 <span className={classes.centre}>Bruce Mahagwa</span>
-                <span className={classes.right}>DATA ANALYST&nbsp;</span>
+                <span className={classes.right}>WEB DEV&nbsp;</span>
             </div>
             <div className = {classes.skills}>
                 <div className={classes.isolate}>
